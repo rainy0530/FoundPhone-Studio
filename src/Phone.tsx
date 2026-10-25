@@ -885,6 +885,17 @@ function AppContent({
   const [thread, setThread] = useState("");
   const [interactiveProgress, setInteractiveProgress] = useState<Record<string, number>>({});
   const [typingThreads, setTypingThreads] = useState<Record<string, boolean>>({});
+  const [tab, setTab] = useState(app.tabs[0]);
+  const [q, setQ] = useState("");
+  const [pw, setPw] = useState("");
+  const [unlocks, setUnlocks] = useState<string[]>([]);
+  const [pwError, setPwError] = useState("");
+  const [likes, setLikes] = useState<string[]>([]);
+  const shown = items
+    .filter((i) => creator || visible(i, state))
+    .filter((i) =>
+      (i.title + i.body + i.sender).toLowerCase().includes(q.toLowerCase()),
+    );
   const [bufferedMessageCounts, setBufferedMessageCounts] = useState<Record<string, number>>({});
   const conversationSignature = shown.filter((i) => i.title === thread).map((i) => i.id).join("|");
   useEffect(() => {
@@ -901,17 +912,6 @@ function AppContent({
     if (conversation.length) timer = setTimeout(revealNext, 320);
     return () => { if (timer) clearTimeout(timer); };
   }, [app.id, app.engine, creator, thread, conversationSignature]);
-  const [tab, setTab] = useState(app.tabs[0]);
-  const [q, setQ] = useState("");
-  const [pw, setPw] = useState("");
-  const [unlocks, setUnlocks] = useState<string[]>([]);
-  const [pwError, setPwError] = useState("");
-  const [likes, setLikes] = useState<string[]>([]);
-  const shown = items
-    .filter((i) => creator || visible(i, state))
-    .filter((i) =>
-      (i.title + i.body + i.sender).toLowerCase().includes(q.toLowerCase()),
-    );
   const filtered =
     tab === "收藏"
       ? shown.filter((i) => i.favorite)
