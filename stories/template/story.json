@@ -3,7 +3,7 @@
   "id": "mingjaehyun-daughter-phone",
   "title": "捡手机｜明宰铉女儿模拟器",
   "description": "以女儿的视角翻看手机：所有剧情对话与手机里的记录都收进 KakaoTalk；女儿的消息通过点击发送，不需要输入文字。",
-  "revision": 7,
+  "revision": 8,
   "phone": {
     "owner": "你",
     "date": "2026-10-26",
@@ -165,13 +165,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "17:57"
         },
         {
           "id": "chat-namsan-003",
           "body": "好",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "17:59"
         },
         {
           "id": "chat-namsan-004",
@@ -180,13 +182,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "18:00"
         },
         {
           "id": "chat-namsan-005",
           "body": "在外面",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "18:02"
         },
         {
           "id": "chat-namsan-006",
@@ -195,13 +199,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "18:03"
         },
         {
           "id": "chat-namsan-007",
           "body": "嗯",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "18:04"
         },
         {
           "id": "chat-namsan-008",
@@ -210,13 +216,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "18:06"
         },
         {
           "id": "chat-namsan-009",
           "body": "附近走走",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "18:07"
         },
         {
           "id": "chat-namsan-010",
@@ -225,13 +233,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "18:09"
         },
         {
           "id": "chat-namsan-011",
           "body": "等你",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "18:10"
         },
         {
           "id": "chat-namsan-012",
@@ -240,13 +250,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "18:11"
         },
         {
           "id": "chat-namsan-013",
           "body": "一起回去",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "18:13"
         },
         {
           "id": "chat-namsan-014",
@@ -255,25 +267,29 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "18:14"
         },
         {
           "id": "chat-namsan-015",
           "body": "本来想去的",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "18:16"
         },
         {
           "id": "chat-namsan-016",
           "body": "后来想了想",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "18:17"
         },
         {
           "id": "chat-namsan-017",
           "body": "你应该不想让我去",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "18:18"
         },
         {
           "id": "chat-namsan-018",
@@ -282,7 +298,8 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "18:20"
         },
         {
           "id": "chat-namsan-019",
@@ -291,13 +308,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "18:21"
         },
         {
           "id": "chat-namsan-020",
           "body": "嗯",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "18:23"
         },
         {
           "id": "chat-namsan-021",
@@ -313,7 +332,8 @@
           "id": "chat-namsan-022",
           "body": "看到你了",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "18:25"
         },
         {
           "id": "chat-namsan-023",
@@ -322,13 +342,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "18:27"
         },
         {
           "id": "chat-namsan-024",
           "body": "你往前走",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "18:27"
         },
         {
           "id": "chat-namsan-025",
@@ -337,13 +359,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "18:29"
         },
         {
           "id": "chat-namsan-026",
           "body": "别走那么快",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "18:29"
         },
         {
           "id": "chat-namsan-027",
@@ -352,7 +376,8 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "18:31"
         },
         {
           "id": "chat-namsan-028",
@@ -361,13 +386,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "18:32"
         },
         {
           "id": "chat-namsan-029",
           "body": "嗯",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "18:33"
         },
         {
           "id": "chat-namsan-030",
@@ -376,13 +403,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "18:34"
         },
         {
           "id": "chat-namsan-031",
           "body": "走累了",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "18:35"
         },
         {
           "id": "chat-namsan-032",
@@ -391,13 +420,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "18:36"
         },
         {
           "id": "chat-namsan-033",
           "body": "今天走了挺久",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "18:38"
         },
         {
           "id": "chat-namsan-034",
@@ -406,13 +437,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "18:38"
         },
         {
           "id": "chat-namsan-035",
           "body": "现在不走了",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "18:40"
         },
         {
           "id": "chat-namsan-036",
@@ -421,13 +454,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "18:41"
         },
         {
           "id": "chat-namsan-037",
           "body": "不想回",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "18:42"
         },
         {
           "id": "chat-namsan-038",
@@ -436,7 +471,8 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "18:43"
         },
         {
           "id": "chat-namsan-039",
@@ -445,13 +481,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "18:44"
         },
         {
           "id": "chat-namsan-040",
           "body": "不知道",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "18:46"
         },
         {
           "id": "chat-namsan-041",
@@ -460,19 +498,22 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "18:46"
         },
         {
           "id": "chat-namsan-042",
           "body": "哈哈",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "18:48"
         },
         {
           "id": "chat-namsan-043",
           "body": "陪爸爸走一会儿",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "18:49"
         },
         {
           "id": "chat-namsan-044",
@@ -481,7 +522,8 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "18:50"
         },
         {
           "id": "chat-namsan-045",
@@ -497,7 +539,8 @@
           "id": "chat-namsan-046",
           "body": "我已经很慢了",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "18:52"
         },
         {
           "id": "chat-namsan-047",
@@ -506,13 +549,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "18:55"
         },
         {
           "id": "chat-namsan-048",
           "body": "那你走前面",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "18:57"
         },
         {
           "id": "chat-namsan-049",
@@ -521,13 +566,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "18:58"
         },
         {
           "id": "chat-namsan-050",
           "body": "为什么",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "19:00"
         },
         {
           "id": "chat-namsan-051",
@@ -536,13 +583,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "19:01"
         },
         {
           "id": "chat-namsan-052",
           "body": "不会",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "19:04"
         },
         {
           "id": "chat-namsan-053",
@@ -551,19 +600,22 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "19:06"
         },
         {
           "id": "chat-namsan-054",
           "body": "……",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "19:07"
         },
         {
           "id": "chat-namsan-055",
           "body": "那次不算",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "19:09"
         },
         {
           "id": "chat-namsan-056",
@@ -572,13 +624,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "19:10"
         },
         {
           "id": "chat-namsan-057",
           "body": "好，算爸爸的",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "19:12"
         },
         {
           "id": "chat-namsan-058",
@@ -587,7 +641,8 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "19:15"
         },
         {
           "id": "chat-namsan-059",
@@ -603,7 +658,8 @@
           "id": "chat-namsan-060",
           "body": "嗯",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "19:18"
         },
         {
           "id": "chat-namsan-061",
@@ -612,13 +668,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "19:19"
         },
         {
           "id": "chat-namsan-062",
           "body": "我就知道",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "19:21"
         },
         {
           "id": "chat-namsan-063",
@@ -627,13 +685,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "19:23"
         },
         {
           "id": "chat-namsan-064",
           "body": "你出门的时候穿那么少",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "19:24"
         },
         {
           "id": "chat-namsan-065",
@@ -642,13 +702,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "19:26"
         },
         {
           "id": "chat-namsan-066",
           "body": "现在呢",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "19:27"
         },
         {
           "id": "chat-namsan-067",
@@ -657,13 +719,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "19:29"
         },
         {
           "id": "chat-namsan-068",
           "body": "过来",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "19:31"
         },
         {
           "id": "chat-namsan-069",
@@ -672,13 +736,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "19:32"
         },
         {
           "id": "chat-namsan-070",
           "body": "围巾给你",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "19:34"
         },
         {
           "id": "chat-namsan-071",
@@ -687,13 +753,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "19:35"
         },
         {
           "id": "chat-namsan-072",
           "body": "我不用",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "19:37"
         },
         {
           "id": "chat-namsan-073",
@@ -702,13 +770,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "19:39"
         },
         {
           "id": "chat-namsan-074",
           "body": "爸爸没事",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "19:40"
         },
         {
           "id": "chat-namsan-075",
@@ -717,13 +787,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "19:42"
         },
         {
           "id": "chat-namsan-076",
           "body": "乖",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "19:43"
         },
         {
           "id": "chat-namsan-077",
@@ -732,7 +804,8 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "19:45"
         },
         {
           "id": "chat-namsan-078",
@@ -741,7 +814,8 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "19:47"
         },
         {
           "id": "chat-namsan-079",
@@ -757,7 +831,8 @@
           "id": "chat-namsan-080",
           "body": "还好",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "19:50"
         },
         {
           "id": "chat-namsan-081",
@@ -766,13 +841,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "19:52"
         },
         {
           "id": "chat-namsan-082",
           "body": "嗯",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "19:54"
         },
         {
           "id": "chat-namsan-083",
@@ -781,13 +858,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "19:57"
         },
         {
           "id": "chat-namsan-084",
           "body": "有一点",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "19:58"
         },
         {
           "id": "chat-namsan-085",
@@ -796,13 +875,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "20:01"
         },
         {
           "id": "chat-namsan-086",
           "body": "你要是不想去就回家",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "20:02"
         },
         {
           "id": "chat-namsan-087",
@@ -811,13 +892,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "20:04"
         },
         {
           "id": "chat-namsan-088",
           "body": "那就去",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "20:07"
         },
         {
           "id": "chat-namsan-089",
@@ -826,13 +909,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "20:08"
         },
         {
           "id": "chat-namsan-090",
           "body": "爸爸带了",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "20:11"
         },
         {
           "id": "chat-namsan-091",
@@ -841,13 +926,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "20:12"
         },
         {
           "id": "chat-namsan-092",
           "body": "包里",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "20:15"
         },
         {
           "id": "chat-namsan-093",
@@ -856,13 +943,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "20:17"
         },
         {
           "id": "chat-namsan-094",
           "body": "出门之前拿的",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "20:19"
         },
         {
           "id": "chat-namsan-095",
@@ -871,7 +960,8 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "20:21"
         },
         {
           "id": "chat-namsan-096",
@@ -887,7 +977,8 @@
           "id": "chat-namsan-097",
           "body": "嗯",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "20:24"
         },
         {
           "id": "chat-namsan-098",
@@ -896,13 +987,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "20:26"
         },
         {
           "id": "chat-namsan-099",
           "body": "看到了",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "20:27"
         },
         {
           "id": "chat-namsan-100",
@@ -911,13 +1004,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "20:29"
         },
         {
           "id": "chat-namsan-101",
           "body": "嗯",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "20:30"
         },
         {
           "id": "chat-namsan-102",
@@ -926,13 +1021,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "20:32"
         },
         {
           "id": "chat-namsan-103",
           "body": "晚上不一样",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "20:33"
         },
         {
           "id": "chat-namsan-104",
@@ -941,13 +1038,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "20:34"
         },
         {
           "id": "chat-namsan-105",
           "body": "来过",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "20:36"
         },
         {
           "id": "chat-namsan-106",
@@ -956,13 +1055,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "20:37"
         },
         {
           "id": "chat-namsan-107",
           "body": "朋友",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "20:39"
         },
         {
           "id": "chat-namsan-108",
@@ -971,13 +1072,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "20:41"
         },
         {
           "id": "chat-namsan-109",
           "body": "怎么了",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "20:42"
         },
         {
           "id": "chat-namsan-110",
@@ -986,13 +1089,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "20:43"
         },
         {
           "id": "chat-namsan-111",
           "body": "那就好",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "20:44"
         },
         {
           "id": "chat-namsan-112",
@@ -1008,7 +1113,8 @@
           "id": "chat-namsan-113",
           "body": "嗯",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "20:47"
         },
         {
           "id": "chat-namsan-114",
@@ -1017,13 +1123,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "20:48"
         },
         {
           "id": "chat-namsan-115",
           "body": "怕不怕",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "20:49"
         },
         {
           "id": "chat-namsan-116",
@@ -1032,13 +1140,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "20:50"
         },
         {
           "id": "chat-namsan-117",
           "body": "那就好",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "20:51"
         },
         {
           "id": "chat-namsan-118",
@@ -1047,13 +1157,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "20:52"
         },
         {
           "id": "chat-namsan-119",
           "body": "干嘛",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "20:53"
         },
         {
           "id": "chat-namsan-120",
@@ -1062,13 +1174,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "20:54"
         },
         {
           "id": "chat-namsan-121",
           "body": "又拍",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "20:55"
         },
         {
           "id": "chat-namsan-122",
@@ -1077,13 +1191,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "20:56"
         },
         {
           "id": "chat-namsan-123",
           "body": "好",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "20:57"
         },
         {
           "id": "chat-namsan-124",
@@ -1092,13 +1208,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "20:58"
         },
         {
           "id": "chat-namsan-125",
           "body": "嗯",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "20:59"
         },
         {
           "id": "chat-namsan-126",
@@ -1107,13 +1225,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "21:00"
         },
         {
           "id": "chat-namsan-127",
           "body": "给爸爸看看",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "21:01"
         },
         {
           "id": "chat-namsan-128",
@@ -1122,13 +1242,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "21:02"
         },
         {
           "id": "chat-namsan-129",
           "body": "为什么",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "21:03"
         },
         {
           "id": "chat-namsan-130",
@@ -1137,13 +1259,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "21:04"
         },
         {
           "id": "chat-namsan-131",
           "body": "那再拍一张",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "21:05"
         },
         {
           "id": "chat-namsan-132",
@@ -1152,7 +1276,8 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "21:06"
         },
         {
           "id": "chat-namsan-133",
@@ -1168,7 +1293,8 @@
           "id": "chat-namsan-134",
           "body": "嗯",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "21:08"
         },
         {
           "id": "chat-namsan-135",
@@ -1177,13 +1303,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "21:10"
         },
         {
           "id": "chat-namsan-136",
           "body": "可以",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "21:11"
         },
         {
           "id": "chat-namsan-137",
@@ -1192,13 +1320,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "21:13"
         },
         {
           "id": "chat-namsan-138",
           "body": "不知道",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "21:14"
         },
         {
           "id": "chat-namsan-139",
@@ -1207,13 +1337,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "21:15"
         },
         {
           "id": "chat-namsan-140",
           "body": "你想挂",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "21:17"
         },
         {
           "id": "chat-namsan-141",
@@ -1222,13 +1354,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "21:18"
         },
         {
           "id": "chat-namsan-142",
           "body": "好",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "21:20"
         },
         {
           "id": "chat-namsan-143",
@@ -1237,13 +1371,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "21:21"
         },
         {
           "id": "chat-namsan-144",
           "body": "知道",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "21:22"
         },
         {
           "id": "chat-namsan-145",
@@ -1252,13 +1388,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "21:24"
         },
         {
           "id": "chat-namsan-146",
           "body": "为什么",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "21:25"
         },
         {
           "id": "chat-namsan-147",
@@ -1267,13 +1405,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "21:27"
         },
         {
           "id": "chat-namsan-148",
           "body": "ㅋㅋㅋㅋㅋ",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "21:28"
         },
         {
           "id": "chat-namsan-149",
@@ -1282,13 +1422,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "21:29"
         },
         {
           "id": "chat-namsan-150",
           "body": "也行",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "21:31"
         },
         {
           "id": "chat-namsan-151",
@@ -1297,7 +1439,8 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "21:32"
         },
         {
           "id": "chat-namsan-152",
@@ -1306,13 +1449,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "21:34"
         },
         {
           "id": "chat-namsan-153",
           "body": "不用别人看出来",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "21:35"
         },
         {
           "id": "chat-namsan-154",
@@ -1321,13 +1466,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "21:36"
         },
         {
           "id": "chat-namsan-155",
           "body": "走吧",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "21:38"
         },
         {
           "id": "chat-namsan-156",
@@ -1336,13 +1483,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "21:39"
         },
         {
           "id": "chat-namsan-157",
           "body": "好",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "21:41"
         },
         {
           "id": "chat-namsan-158",
@@ -1358,13 +1507,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "21:44"
         },
         {
           "id": "chat-namsan-160",
           "body": "走了",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "21:47"
         },
         {
           "id": "chat-namsan-161",
@@ -1373,13 +1524,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "21:48"
         },
         {
           "id": "chat-namsan-162",
           "body": "回去给你买热的",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "21:51"
         },
         {
           "id": "chat-namsan-163",
@@ -1388,13 +1541,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "21:54"
         },
         {
           "id": "chat-namsan-164",
           "body": "好",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "21:55"
         },
         {
           "id": "chat-namsan-165",
@@ -1403,13 +1558,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "21:58"
         },
         {
           "id": "chat-namsan-166",
           "body": "好",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "22:00"
         },
         {
           "id": "chat-namsan-167",
@@ -1418,13 +1575,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "22:02"
         },
         {
           "id": "chat-namsan-168",
           "body": "和你一样",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "22:05"
         },
         {
           "id": "chat-namsan-169",
@@ -1433,13 +1592,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "22:07"
         },
         {
           "id": "chat-namsan-170",
           "body": "今天喝",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "22:09"
         },
         {
           "id": "chat-namsan-171",
@@ -1448,13 +1609,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "22:11"
         },
         {
           "id": "chat-namsan-172",
           "body": "真的",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "22:14"
         },
         {
           "id": "chat-namsan-173",
@@ -1470,7 +1633,8 @@
           "id": "chat-namsan-174",
           "body": "嗯",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "22:18"
         },
         {
           "id": "chat-namsan-175",
@@ -1479,13 +1643,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "22:20"
         },
         {
           "id": "chat-namsan-176",
           "body": "没什么",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "22:22"
         },
         {
           "id": "chat-namsan-177",
@@ -1494,13 +1660,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "22:25"
         },
         {
           "id": "chat-namsan-178",
           "body": "就是想和你走走",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "22:27"
         },
         {
           "id": "chat-namsan-179",
@@ -1509,7 +1677,8 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "22:29"
         },
         {
           "id": "chat-namsan-180",
@@ -1518,13 +1687,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "22:31"
         },
         {
           "id": "chat-namsan-181",
           "body": "怎么了",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "22:33"
         },
         {
           "id": "chat-namsan-182",
@@ -1533,7 +1704,8 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "22:35"
         },
         {
           "id": "chat-namsan-183",
@@ -1542,13 +1714,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "22:38"
         },
         {
           "id": "chat-namsan-184",
           "body": "哪里奇怪",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "22:39"
         },
         {
           "id": "chat-namsan-185",
@@ -1557,13 +1731,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "22:42"
         },
         {
           "id": "chat-namsan-186",
           "body": "那就不知道",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "22:43"
         },
         {
           "id": "chat-namsan-187",
@@ -1572,13 +1748,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "22:46"
         },
         {
           "id": "chat-namsan-188",
           "body": "累了没有",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "22:49"
         },
         {
           "id": "chat-namsan-189",
@@ -1587,13 +1765,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "22:50"
         },
         {
           "id": "chat-namsan-190",
           "body": "那靠爸爸近一点",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "22:53"
         },
         {
           "id": "chat-namsan-191",
@@ -1602,13 +1782,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "22:54"
         },
         {
           "id": "chat-namsan-192",
           "body": "路上人多",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "22:57"
         },
         {
           "id": "chat-namsan-193",
@@ -1617,7 +1799,8 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "22:59"
         },
         {
           "id": "chat-namsan-194",
@@ -1633,7 +1816,8 @@
           "id": "chat-namsan-195",
           "body": "嗯",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "23:02"
         },
         {
           "id": "chat-namsan-196",
@@ -1642,13 +1826,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "23:03"
         },
         {
           "id": "chat-namsan-197",
           "body": "下次不走这么多",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "23:04"
         },
         {
           "id": "chat-namsan-198",
@@ -1657,13 +1843,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "23:06"
         },
         {
           "id": "chat-namsan-199",
           "body": "去",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "23:06"
         },
         {
           "id": "chat-namsan-200",
@@ -1672,13 +1860,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "23:08"
         },
         {
           "id": "chat-namsan-201",
           "body": "你想去的时候",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "23:09"
         },
         {
           "id": "chat-namsan-202",
@@ -1687,13 +1877,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "23:10"
         },
         {
           "id": "chat-namsan-203",
           "body": "进去吧",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "23:12"
         },
         {
           "id": "chat-namsan-204",
@@ -1702,13 +1894,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "23:12"
         },
         {
           "id": "chat-namsan-205",
           "body": "爸爸把垃圾扔一下",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "23:14"
         },
         {
           "id": "chat-namsan-206",
@@ -1717,13 +1911,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "23:14"
         },
         {
           "id": "chat-namsan-207",
           "body": "进去等我",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "23:16"
         },
         {
           "id": "chat-namsan-208",
@@ -1732,7 +1928,8 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "23:17"
         },
         {
           "id": "chat-namsan-209",
@@ -1874,72 +2071,88 @@
       "messages": [
         {
           "id": "phone-record-namsan-1",
-          "body": "【今日行程｜和爸爸出去走走】\n10月26日晚上，吃完饭后爸爸问我要不要出去走走。原本只说在附近散步，最后却一起去了南山塔。",
-          "senderId": "owner",
           "title": "手机里的记录",
+          "body": "和爸爸出去走走。吃完饭后，他说想在附近散步，最后我们一起去了南山塔。",
+          "senderId": "owner",
+          "time": "18:32",
+          "kind": "text",
           "meta": {
             "interactive": "true"
           }
         },
         {
           "id": "phone-record-namsan-2",
-          "body": "【夜景｜南山的夜晚】\n南山塔附近的城市夜景很漂亮。爸爸站着看了好一会儿，还问我冷不冷，顺手把围巾往我这边拢了拢。",
-          "senderId": "owner",
           "title": "手机里的记录",
+          "body": "南山塔附近的夜景很漂亮。爸爸站着看了好一会儿，又问我冷不冷。",
+          "senderId": "owner",
+          "time": "19:35",
+          "kind": "text",
           "meta": {
             "interactive": "true"
           }
         },
         {
           "id": "phone-record-namsan-3",
-          "body": "【相册｜爸爸的照片】\n今天给明宰铉拍了照片。他问我拍他干什么，我说好看。过了一会儿，他又确认照片拍得好不好看。原稿未附图片，保留为照片说明占位。",
-          "senderId": "owner",
           "title": "手机里的记录",
+          "body": "爸爸在南山拍的照片。后来我也给他拍了一张，他问我拍得好不好看。",
+          "senderId": "owner",
+          "time": "20:02",
+          "kind": "text",
           "meta": {
             "interactive": "true"
           }
         },
         {
           "id": "phone-record-namsan-4",
-          "body": "【南山塔｜想挂一把锁】\n我们一起去看了挂锁的地方。爸爸问我想不想挂，我说想，他就陪我一起找。最后虽然还没想好要写什么，但一起站在那里就很好。",
-          "senderId": "owner",
           "title": "手机里的记录",
+          "body": "南山塔的挂锁墙。我们一起看了很久，爸爸问我想不想挂一把锁。",
+          "senderId": "owner",
+          "time": "20:18",
+          "kind": "text",
           "meta": {
             "interactive": "true"
           }
         },
         {
           "id": "phone-record-namsan-5",
-          "body": "【散步｜别走太快】\n爸爸总是走在前面一点，但会时不时停下来回头看我有没有跟上。过马路时也会等我，有时还会伸手拉我一下。",
-          "senderId": "owner",
           "title": "手机里的记录",
+          "body": "回去时拍下的背影。爸爸走在前面，却总会停下来看看我有没有跟上。",
+          "senderId": "owner",
+          "time": "21:55",
+          "kind": "text",
           "meta": {
             "interactive": "true"
           }
         },
         {
           "id": "phone-record-namsan-6",
-          "body": "【休息｜今天开心吗】\n走累了，我们在路边坐了一会儿。爸爸问我今天开不开心，我说开心。他又问下次还想不想出来，答应下次再带我去。",
-          "senderId": "owner",
           "title": "手机里的记录",
+          "body": "走累了，他坐下来休息，我也陪他坐了一会儿。",
+          "senderId": "owner",
+          "time": "22:40",
+          "kind": "text",
           "meta": {
             "interactive": "true"
           }
         },
         {
           "id": "phone-record-namsan-7",
-          "body": "【备忘录｜10月26日】\n今天和爸爸走了很久，看了南山塔和夜景，也去看了挂锁的地方。其实没做什么特别的事，但这样的晚上很好。",
-          "senderId": "owner",
           "title": "手机里的记录",
+          "body": "今天和爸爸走了很久，看了南山塔和夜景，也去看了挂锁。这样的晚上很好。",
+          "senderId": "owner",
+          "time": "23:12",
+          "kind": "text",
           "meta": {
             "interactive": "true"
           }
         },
         {
           "id": "phone-record-namsan-8",
-          "body": "【今日小结｜下次还要一起出去】\n回家的时候已经有点晚了。爸爸走在前面，过马路时会等我。今天只是一起散步、看夜景、拍照片，却觉得很开心。",
-          "senderId": "owner",
           "title": "手机里的记录",
+          "body": "回家的路上。过马路时爸爸会等我，有时还会伸手拉我一下。",
+          "senderId": "owner",
+          "time": "22:05",
+          "kind": "text",
           "meta": {
             "interactive": "true"
           }
