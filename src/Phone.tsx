@@ -883,6 +883,7 @@ function AppContent({
 }) {
   const [detail, setDetail] = useState<Item | null>(null);
   const [thread, setThread] = useState("");
+  const [interactiveProgress, setInteractiveProgress] = useState<Record<string, number>>({});
   const [tab, setTab] = useState(app.tabs[0]);
   const [q, setQ] = useState("");
   const [pw, setPw] = useState("");
@@ -1073,46 +1074,87 @@ function AppContent({
       ) : detail ? (
         detailView
       ) : app.engine === "messaging" && thread ? (
-        <div className="chat-content">
+        <div className={`chat-content ${app.id === "kakao" ? "kakao-story-chat" : ""}`}>
           <div className="chat-time">2026 年 9 月 1 日</div>
-          {shown
-            .filter((i) => i.title === thread)
-            .map((i) => (
+          {(() => {
+            const conversation = shown.filter((i) => i.title === thread);
+            const interactive = app.id === "kakao" && !creator;
+            const replyCount = interactiveProgress[thread] ?? 0;
+            const nextReplyIndex = interactive
+              ? conversation.reduce((found, item, index) =>
+                  found < 0 && item.outgoing && item.meta?.interactive === "true"
+                    ? index
+                    : found, -1)
+              : -1;
+            const visibleCount = interactive
+              ? conversation.reduce((count, item, index) => {
+                  if (index > nextReplyIndex && count === 0) return count;
+                  return count + 1;
+                }, 0)
+              : conversation.length;
+            const shownCount = interactive
+              ? (() => {
+                  let replies = 0;
+                  for (let index = 0; index < conversation.length; index++) {
+                    if (conversation[index].outgoing && conversation[index].meta?.interactive === "true") {
+                      if (replies >= replyCount) return index + 1;
+                      replies++;
+                    }
+                  }
+                  return conversation.length;
+                })()
+              : visibleCount;
+            const nextIndex = interactive
+              ? conversation.findIndex((item, index) =>
+                  index >= shownCount && item.outgoing && item.meta?.interactive === "true")
+              : -1;
+            const renderItem = (i: Item, isChoice = false) => (
               <button
                 key={i.id}
-                className={`message-row ${i.outgoing ? "outgoing" : ""}`}
-                onClick={() => (creator ? onEdit(i) : onRead(i.id))}
+                className={`message-row ${i.outgoing ? "outgoing" : ""} ${isChoice ? "reply-choice" : ""}`}
+                onClick={() => {
+                  if (creator) onEdit(i);
+                  else if (isChoice) {
+                    onRead(i.id);
+                    setInteractiveProgress((old) => ({ ...old, [thread]: (old[thread] ?? 0) + 1 }));
+                  } else onRead(i.id);
+                }}
               >
                 <span className="avatar">{i.sender.slice(0, 1)}</span>
                 <span className="bubble">
-                  {i.kind === "image" ||
-                  i.kind === "audio" ||
-                  i.kind === "video" ? (
+                  {isChoice && <span className="reply-hint">点击发送</span>}
+                  {i.kind === "image" || i.kind === "audio" || i.kind === "video" ? (
                     <Media item={i} />
                   ) : i.kind === "transfer" ? (
-                    <span className="transfer">
-                      ¥ {i.body}
-                      <small>虚构转账记录</small>
-                    </span>
-                  ) : (
-                    i.body
-                  )}
-                  <small>
-                    {i.time.slice(-5)} {i.read ? "✓✓" : ""}
-                  </small>
-                  {creator && (i.hidden || i.unlock) && (
-                    <LockKeyhole size={12} />
-                  )}
+                    <span className="transfer">¥ {i.body}<small>虚构转账记录</small></span>
+                  ) : i.body}
+                  <small>{i.time.slice(-5)} {i.read ? "✓✓" : ""}</small>
+                  {creator && (i.hidden || i.unlock) && <LockKeyhole size={12} />}
                 </span>
               </button>
-            ))}
+            );
+            return <>
+              {conversation.slice(0, shownCount).map((item, index) =>
+                renderItem(item, interactive && index === shownCount - 1 &&
+                  item.outgoing && item.meta?.interactive === "true" &&
+                  replyCount === conversation.slice(0, shownCount).filter((m) => m.outgoing && m.meta?.interactive === "true").length - 1)
+              )}
+              {interactive && nextIndex >= 0 && (
+                <button className="kakao-next-reply" onClick={() => {
+                  const next = conversation[nextIndex];
+                  onRead(next.id);
+                  setInteractiveProgress((old) => ({ ...old, [thread]: (old[thread] ?? 0) + 1 }));
+                }}>
+                  <span>下一句回复</span><strong>{conversation[nextIndex].body}</strong><small>点击发送，不用打字</small>
+                </button>
+              )}
+            </>;
+          })()}
           {creator ? (
-            <button className="chat-compose" onClick={onAdd}>
-              ＋ 添加一条消息
-            </button>
+            <button className="chat-compose" onClick={onAdd}>＋ 添加一条消息</button>
           ) : (
             <div className="chat-compose muted">
-              根据剧情推进，互动回复将在这里出现。
+              {app.id === "kakao" ? "选择下方回复，继续和爸爸聊天" : "根据剧情推进，互动回复将在这里出现。"}
             </div>
           )}
         </div>
