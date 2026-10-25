@@ -885,6 +885,22 @@ function AppContent({
   const [thread, setThread] = useState("");
   const [interactiveProgress, setInteractiveProgress] = useState<Record<string, number>>({});
   const [typingThreads, setTypingThreads] = useState<Record<string, boolean>>({});
+  const [bufferedMessageCounts, setBufferedMessageCounts] = useState<Record<string, number>>({});
+  const conversationSignature = shown.filter((i) => i.title === thread).map((i) => i.id).join("|");
+  useEffect(() => {
+    if (creator || app.engine !== "messaging" || !thread || app.id === "kakao") return;
+    const conversation = shown.filter((i) => i.title === thread);
+    let count = 0;
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    setBufferedMessageCounts((old) => ({ ...old, [thread]: 0 }));
+    const revealNext = () => {
+      count += 1;
+      setBufferedMessageCounts((old) => ({ ...old, [thread]: count }));
+      if (count < conversation.length) timer = setTimeout(revealNext, 560);
+    };
+    if (conversation.length) timer = setTimeout(revealNext, 320);
+    return () => { if (timer) clearTimeout(timer); };
+  }, [app.id, app.engine, creator, thread, conversationSignature]);
   const [tab, setTab] = useState(app.tabs[0]);
   const [q, setQ] = useState("");
   const [pw, setPw] = useState("");
@@ -1081,7 +1097,9 @@ function AppContent({
             const conversation = shown.filter((i) => i.title === thread);
             const interactive = app.id === "kakao" && !creator;
             const replyCount = interactiveProgress[thread] ?? 0;
-            let shownCount = conversation.length;
+            let shownCount = app.id === "kakao" || creator
+              ? conversation.length
+              : Math.min(conversation.length, bufferedMessageCounts[thread] ?? 0);
             if (interactive) {
               let replies = 0;
               for (let index = 0; index < conversation.length; index++) {
