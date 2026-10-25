@@ -884,6 +884,7 @@ function AppContent({
   const [detail, setDetail] = useState<Item | null>(null);
   const [thread, setThread] = useState("");
   const [interactiveProgress, setInteractiveProgress] = useState<Record<string, number>>({});
+  const [typingThreads, setTypingThreads] = useState<Record<string, boolean>>({});
   const [tab, setTab] = useState(app.tabs[0]);
   const [q, setQ] = useState("");
   const [pw, setPw] = useState("");
@@ -1114,15 +1115,24 @@ function AppContent({
                   </span>
                 </button>
               ))}
-              {interactive && nextIndex >= 0 && (
+              {interactive && typingThreads[thread] && (
+                <div className="kakao-typing-indicator" role="status" aria-live="polite">
+                  <span /><span /><span /> 爸爸正在回复…
+                </div>
+              )}
+              {interactive && nextIndex >= 0 && !typingThreads[thread] && (
                 <button className="kakao-next-reply" onClick={() => {
                   const next = conversation[nextIndex];
-                  onRead(next.id);
-                  setInteractiveProgress((old) => ({ ...old, [thread]: (old[thread] ?? 0) + 1 }));
+                  setTypingThreads((old) => ({ ...old, [thread]: true }));
+                  window.setTimeout(() => {
+                    onRead(next.id);
+                    setInteractiveProgress((old) => ({ ...old, [thread]: (old[thread] ?? 0) + 1 }));
+                    setTypingThreads((old) => ({ ...old, [thread]: false }));
+                  }, 950 + (next.body.length % 5) * 170);
                 }}>
                   <span className="reply-chip-label">点一下发送</span>
                   <strong>{conversation[nextIndex].body}</strong>
-                  <small>不用打字 · 下一句女儿的回复</small>
+                  <small>不用打字 · 发送后稍等片刻</small>
                 </button>
               )}
             </>;
