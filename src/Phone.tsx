@@ -1128,7 +1128,7 @@ function AppContent({
                     onRead(next.id);
                     setInteractiveProgress((old) => ({ ...old, [thread]: (old[thread] ?? 0) + 1 }));
                     setTypingThreads((old) => ({ ...old, [thread]: false }));
-                  }, 950 + (next.body.length % 5) * 170);
+                  }, 1000);
                 }}>
                   <span className="reply-chip-label">点一下发送</span>
                   <strong>{conversation[nextIndex].body}</strong>
