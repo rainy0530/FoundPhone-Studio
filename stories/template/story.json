@@ -3,7 +3,7 @@
   "id": "mingjaehyun-daughter-phone",
   "title": "捡手机｜明宰铉女儿模拟器",
   "description": "以女儿的视角翻看手机：所有剧情对话与手机里的记录都收进 KakaoTalk；女儿的消息通过点击发送，不需要输入文字。",
-  "revision": 6,
+  "revision": 7,
   "phone": {
     "owner": "你",
     "date": "2026-10-26",
@@ -1873,81 +1873,73 @@
       ],
       "messages": [
         {
-          "id": "phone-record-1",
-          "title": "手机里的记录",
-          "body": "【相册｜偷拍成功。】\n相册「宰铉」｜一张明宰铉睡着时被拍下来的照片。原稿未附图片，保留为照片说明占位。",
+          "id": "phone-record-namsan-1",
+          "body": "【今日行程｜和爸爸出去走走】\n10月26日晚上，吃完饭后爸爸问我要不要出去走走。原本只说在附近散步，最后却一起去了南山塔。",
           "senderId": "owner",
-          "time": "18:03",
+          "title": "手机里的记录",
           "meta": {
             "interactive": "true"
           }
         },
         {
-          "id": "phone-record-2",
-          "title": "手机里的记录",
-          "body": "【相册｜买东西还要戴帽子。】\n相册「宰铉」｜明宰铉戴着帽子站在便利店门口。原稿未附图片，保留为照片说明占位。",
+          "id": "phone-record-namsan-2",
+          "body": "【夜景｜南山的夜晚】\n南山塔附近的城市夜景很漂亮。爸爸站着看了好一会儿，还问我冷不冷，顺手把围巾往我这边拢了拢。",
           "senderId": "owner",
-          "time": "18:03",
+          "title": "手机里的记录",
           "meta": {
             "interactive": "true"
           }
         },
         {
-          "id": "phone-record-3",
-          "title": "手机里的记录",
-          "body": "【相册｜爸爸说他不喝，结果喝了一半。】\n相册「宰铉」｜明宰铉拿着两杯饮料。原稿未附图片，保留为照片说明占位。",
+          "id": "phone-record-namsan-3",
+          "body": "【相册｜爸爸的照片】\n今天给明宰铉拍了照片。他问我拍他干什么，我说好看。过了一会儿，他又确认照片拍得好不好看。原稿未附图片，保留为照片说明占位。",
           "senderId": "owner",
-          "time": "18:03",
+          "title": "手机里的记录",
           "meta": {
             "interactive": "true"
           }
         },
         {
-          "id": "phone-record-4",
-          "title": "手机里的记录",
-          "body": "【相册｜他说这些都是顺便买的。】\n相册｜明宰铉坐在沙发上，怀里抱着一大袋零食，旁边放着刚买回来的东西。照片由你拍摄。原稿未附图片，保留为照片说明占位。",
+          "id": "phone-record-namsan-4",
+          "body": "【南山塔｜想挂一把锁】\n我们一起去看了挂锁的地方。爸爸问我想不想挂，我说想，他就陪我一起找。最后虽然还没想好要写什么，但一起站在那里就很好。",
           "senderId": "owner",
-          "time": "22:09",
+          "title": "手机里的记录",
           "meta": {
             "interactive": "true"
           }
         },
         {
-          "id": "phone-record-5",
-          "title": "手机里的记录",
-          "body": "【相册｜顺便买了六样东西的人。】\n相册｜明宰铉正在整理你买回来的东西。原稿未附图片，保留为照片说明占位。",
+          "id": "phone-record-namsan-5",
+          "body": "【散步｜别走太快】\n爸爸总是走在前面一点，但会时不时停下来回头看我有没有跟上。过马路时也会等我，有时还会伸手拉我一下。",
           "senderId": "owner",
-          "time": "22:09",
+          "title": "手机里的记录",
           "meta": {
             "interactive": "true"
           }
         },
         {
-          "id": "phone-record-6",
-          "title": "手机里的记录",
-          "body": "【备忘录｜爸爸】\n他今天又问我冷不冷。\n\n明明我穿了外套。\n\n还问我有没有钱。\n\n我说有。\n\n他不信。\n\n转了钱。",
+          "id": "phone-record-namsan-6",
+          "body": "【休息｜今天开心吗】\n走累了，我们在路边坐了一会儿。爸爸问我今天开不开心，我说开心。他又问下次还想不想出来，答应下次再带我去。",
           "senderId": "owner",
-          "time": "20:41",
+          "title": "手机里的记录",
           "meta": {
             "interactive": "true"
           }
         },
         {
-          "id": "phone-record-7",
-          "title": "手机里的记录",
-          "body": "【备忘录｜爸爸（续）】\n根本不需要，但还是收了。\n\n明天还要问他能不能买那个。",
+          "id": "phone-record-namsan-7",
+          "body": "【备忘录｜10月26日】\n今天和爸爸走了很久，看了南山塔和夜景，也去看了挂锁的地方。其实没做什么特别的事，但这样的晚上很好。",
           "senderId": "owner",
-          "time": "20:41",
+          "title": "手机里的记录",
           "meta": {
             "interactive": "true"
           }
         },
         {
-          "id": "phone-record-8",
-          "title": "手机里的记录",
-          "body": "【备忘录｜今天】\n爸爸真的很烦。\n\n但是有爸爸在家，好像也挺好的。\n\n\n明天让他给我买蛋糕。",
+          "id": "phone-record-namsan-8",
+          "body": "【今日小结｜下次还要一起出去】\n回家的时候已经有点晚了。爸爸走在前面，过马路时会等我。今天只是一起散步、看夜景、拍照片，却觉得很开心。",
           "senderId": "owner",
-          "time": "00:13",
+          "title": "手机里的记录",
           "meta": {
             "interactive": "true"
           }
