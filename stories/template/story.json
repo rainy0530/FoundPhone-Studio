@@ -1,1 +1,924 @@
-{"scriptVersion":1,"id":"mingjaehyun-daughter-phone","title":"捡手机｜明宰铉女儿模拟器","description":"以女儿的视角翻看手机：微信、相册与备忘录记录了和爸爸明宰铉平常又温柔的一天。","revision":3,"phone":{"owner":"你","date":"2026-10-25","time":"00:13","battery":94,"network":"5G","wallpaper":"apple-wwdc26"},"installedApps":["appstore",{"id":"wechat","name":"微信","installed":true,"visible":true,"dock":false,"folder":"","icon":""},{"id":"douyin","name":"抖音","installed":true,"visible":true,"dock":false,"folder":"","icon":""},"phone","messages","contacts","photos",{"id":"camera","name":"相机","installed":true,"visible":true,"dock":true,"folder":"","icon":""},"safari","notes","calendar","mail","clock","reminders","files","music","maps","weather","wallet","health","find","calculator","settings","qq","weibo","redbook","bilibili","alipay","taobao","netease","delivery","forum","whatsapp","instagram","tiktok","twitter","telegram","discord","youtube","line","snapchat","facebook","messenger","reddit","spotify","netflix","pinterest","threads","kakao"],"contacts":[{"id":"ming-jaehyun","name":"明宰铉","phone":"","avatar":"","bio":"爸爸。话不多，但总是把女儿喜欢的东西带回家。"}],"chats":[{"id":"wechat-ming-jaehyun","app":"wechat","title":"明宰铉","participants":["owner","ming-jaehyun"],"messages":[{"id":"chat-after-school-01","body":"放学了吗","senderId":"ming-jaehyun","title":"明宰铉"},{"id":"chat-after-school-02","body":"嗯","senderId":"owner","title":"明宰铉"},{"id":"chat-after-school-03","body":"在哪","senderId":"ming-jaehyun","title":"明宰铉"},{"id":"chat-after-school-04","body":"学校门口","senderId":"owner","title":"明宰铉"},{"id":"chat-after-school-05","body":"等爸爸","senderId":"ming-jaehyun","title":"明宰铉"},{"id":"chat-after-school-06","body":"不用，我自己回去","senderId":"owner","title":"明宰铉"},{"id":"chat-after-school-07","body":"我已经出门了","senderId":"ming-jaehyun","title":"明宰铉"},{"id":"chat-after-school-08","body":"……","senderId":"owner","title":"明宰铉"},{"id":"chat-after-school-09","body":"你为什么不提前告诉我","senderId":"owner","title":"明宰铉"},{"id":"chat-after-school-10","body":"现在告诉了","senderId":"ming-jaehyun","title":"明宰铉"},{"id":"chat-after-school-11","body":"那你来都来了","senderId":"owner","title":"明宰铉"},{"id":"chat-after-school-12","body":"嗯","senderId":"ming-jaehyun","title":"明宰铉"},{"id":"chat-after-school-13","body":"给你带了吃的","senderId":"ming-jaehyun","title":"明宰铉"},{"id":"chat-after-school-14","body":"什么","senderId":"owner","title":"明宰铉"},{"id":"chat-after-school-15","body":"不知道","senderId":"ming-jaehyun","title":"明宰铉"},{"id":"chat-after-school-16","body":"那你买什么了","senderId":"owner","title":"明宰铉"},{"id":"chat-after-school-17","body":"看到什么都觉得你可能喜欢","senderId":"ming-jaehyun","title":"明宰铉"},{"id":"chat-after-school-18","body":"买了几个？","senderId":"owner","title":"明宰铉"},{"id":"chat-after-school-19","body":"……","senderId":"ming-jaehyun","title":"明宰铉"},{"id":"chat-after-school-20","body":"几个","senderId":"owner","title":"明宰铉"},{"id":"chat-after-school-21","body":"六个","senderId":"ming-jaehyun","title":"明宰铉"},{"id":"chat-after-school-22","body":"我一个人怎么吃六个","senderId":"owner","title":"明宰铉"},{"id":"chat-after-school-23","body":"吃不完带回家","senderId":"ming-jaehyun","title":"明宰铉"},{"id":"chat-after-school-24","body":"你就是乱买","senderId":"owner","title":"明宰铉"},{"id":"chat-after-school-25","body":"嗯。","senderId":"ming-jaehyun","title":"明宰铉"},{"id":"chat-after-school-26","body":"爸爸愿意。","senderId":"ming-jaehyun","title":"明宰铉"},{"id":"chat-evening-01","body":"到家了吗","senderId":"ming-jaehyun","time":"18:27","title":"明宰铉"},{"id":"chat-evening-02","body":"到了","senderId":"owner","title":"明宰铉"},{"id":"chat-evening-03","body":"好","senderId":"ming-jaehyun","title":"明宰铉"},{"id":"chat-evening-04","body":"吃饭了吗","senderId":"ming-jaehyun","title":"明宰铉"},{"id":"chat-evening-05","body":"吃了","senderId":"owner","title":"明宰铉"},{"id":"chat-evening-06","body":"吃的什么","senderId":"ming-jaehyun","title":"明宰铉"},{"id":"chat-evening-07","body":"面","senderId":"owner","title":"明宰铉"},{"id":"chat-evening-08","body":"……","senderId":"ming-jaehyun","title":"明宰铉"},{"id":"chat-evening-09","body":"又吃面","senderId":"ming-jaehyun","title":"明宰铉"},{"id":"chat-evening-10","body":"方便","senderId":"owner","title":"明宰铉"},{"id":"chat-evening-11","body":"晚上爸爸给你做饭","senderId":"ming-jaehyun","title":"明宰铉"},{"id":"chat-evening-12","body":"你会做吗？","senderId":"owner","title":"明宰铉"},{"id":"chat-evening-13","body":"会","senderId":"ming-jaehyun","title":"明宰铉"},{"id":"chat-evening-14","body":"上次差点把锅烧了","senderId":"owner","title":"明宰铉"},{"id":"chat-evening-15","body":"那次是意外","senderId":"ming-jaehyun","title":"明宰铉"},{"id":"chat-evening-16","body":"你还把盐放成糖了","senderId":"owner","title":"明宰铉"},{"id":"chat-evening-17","body":"……","senderId":"ming-jaehyun","title":"明宰铉"},{"id":"chat-evening-18","body":"这次不会","senderId":"ming-jaehyun","title":"明宰铉"},{"id":"chat-evening-19","body":"你确定？","senderId":"owner","title":"明宰铉"},{"id":"chat-evening-20","body":"确定","senderId":"ming-jaehyun","title":"明宰铉"},{"id":"chat-evening-21","body":"你爸爸什么时候骗过你","senderId":"ming-jaehyun","title":"明宰铉"},{"id":"chat-evening-22","body":"很多次","senderId":"owner","title":"明宰铉"},{"id":"chat-evening-23","body":"没有","senderId":"ming-jaehyun","title":"明宰铉"},{"id":"chat-evening-24","body":"爸爸说有就是有","senderId":"ming-jaehyun","title":"明宰铉"},{"id":"chat-shopping-01","body":"爸爸","senderId":"owner","time":"21:16","title":"明宰铉"},{"id":"chat-shopping-02","body":"嗯","senderId":"ming-jaehyun","title":"明宰铉"},{"id":"chat-shopping-03","body":"我想买个东西","senderId":"owner","title":"明宰铉"},{"id":"chat-shopping-04","body":"买","senderId":"ming-jaehyun","title":"明宰铉"},{"id":"chat-shopping-05","body":"你都不知道是什么","senderId":"owner","title":"明宰铉"},{"id":"chat-shopping-06","body":"你先发给爸爸看看","senderId":"ming-jaehyun","title":"明宰铉"},{"id":"chat-shopping-07","body":"[商品链接]","senderId":"owner","title":"明宰铉"},{"id":"chat-shopping-08","body":"好可爱","senderId":"ming-jaehyun","title":"明宰铉"},{"id":"chat-shopping-09","body":"对吧！","senderId":"owner","title":"明宰铉"},{"id":"chat-shopping-10","body":"买","senderId":"ming-jaehyun","title":"明宰铉"},{"id":"chat-shopping-11","body":"可是有点贵","senderId":"owner","title":"明宰铉"},{"id":"chat-shopping-12","body":"爸爸买","senderId":"ming-jaehyun","title":"明宰铉"},{"id":"chat-shopping-13","body":"不用，我自己有钱","senderId":"owner","title":"明宰铉"},{"id":"chat-shopping-14","body":"你的钱留着","senderId":"ming-jaehyun","title":"明宰铉"},{"id":"chat-shopping-15","body":"为什么","senderId":"owner","title":"明宰铉"},{"id":"chat-shopping-16","body":"以后想买别的","senderId":"ming-jaehyun","title":"明宰铉"},{"id":"chat-shopping-17","body":"那你给我买？","senderId":"owner","title":"明宰铉"},{"id":"chat-shopping-18","body":"嗯","senderId":"ming-jaehyun","title":"明宰铉"},{"id":"chat-shopping-19","body":"你怎么什么都给我买","senderId":"owner","title":"明宰铉"},{"id":"chat-shopping-20","body":"因为你喜欢","senderId":"ming-jaehyun","title":"明宰铉"},{"id":"chat-night-01","body":"睡觉","senderId":"ming-jaehyun","time":"23:02","title":"明宰铉"},{"id":"chat-night-02","body":"不困","senderId":"owner","title":"明宰铉"},{"id":"chat-night-03","body":"明天不是还要早起","senderId":"ming-jaehyun","title":"明宰铉"},{"id":"chat-night-04","body":"知道","senderId":"owner","title":"明宰铉"},{"id":"chat-night-05","body":"手机放下","senderId":"ming-jaehyun","title":"明宰铉"},{"id":"chat-night-06","body":"你怎么知道我还在玩手机","senderId":"owner","title":"明宰铉"},{"id":"chat-night-07","body":"猜的","senderId":"ming-jaehyun","title":"明宰铉"},{"id":"chat-night-08","body":"那我现在就放","senderId":"owner","title":"明宰铉"},{"id":"chat-night-09","body":"嗯","senderId":"ming-jaehyun","title":"明宰铉"},{"id":"chat-night-10","body":"真的放了吗","senderId":"ming-jaehyun","title":"明宰铉"},{"id":"chat-night-11","body":"……","senderId":"owner","title":"明宰铉"},{"id":"chat-night-12","body":"你很烦","senderId":"owner","title":"明宰铉"},{"id":"chat-night-13","body":"睡吧","senderId":"ming-jaehyun","title":"明宰铉"},{"id":"chat-night-14","body":"晚安爸爸","senderId":"owner","title":"明宰铉"},{"id":"chat-night-15","body":"晚安","senderId":"ming-jaehyun","title":"明宰铉"},{"id":"chat-night-16","body":"明天想吃什么","senderId":"ming-jaehyun","title":"明宰铉"},{"id":"chat-night-17","body":"不知道","senderId":"owner","title":"明宰铉"},{"id":"chat-night-18","body":"那爸爸明天看着买","senderId":"ming-jaehyun","title":"明宰铉"},{"id":"chat-night-19","body":"好","senderId":"owner","title":"明宰铉"},{"id":"chat-night-20","body":"嗯","senderId":"ming-jaehyun","title":"明宰铉"},{"id":"chat-night-21","body":"小朋友","senderId":"ming-jaehyun","title":"明宰铉"},{"id":"chat-night-22","body":"干嘛","senderId":"owner","title":"明宰铉"},{"id":"chat-night-23","body":"没事","senderId":"ming-jaehyun","title":"明宰铉"},{"id":"chat-night-24","body":"你有病啊","senderId":"owner","title":"明宰铉"},{"id":"chat-night-25","body":"睡觉。","senderId":"ming-jaehyun","title":"明宰铉"}]}],"content":{"phone":[],"contacts":[],"photos":[{"id":"album-jaehyun-sleeping","title":"偷拍成功。","body":"相册「宰铉」｜一张明宰铉睡着时被拍下来的照片。原稿未附图片，保留为照片说明占位。","time":"18:03","kind":"text","folder":"宰铉","sender":"你"},{"id":"album-jaehyun-cap","title":"买东西还要戴帽子。","body":"相册「宰铉」｜明宰铉戴着帽子站在便利店门口。原稿未附图片，保留为照片说明占位。","time":"18:03","kind":"text","folder":"宰铉","sender":"你"},{"id":"album-jaehyun-drinks","title":"爸爸说他不喝，结果喝了一半。","body":"相册「宰铉」｜明宰铉拿着两杯饮料。原稿未附图片，保留为照片说明占位。","time":"18:03","kind":"text","folder":"宰铉","sender":"你"},{"id":"album-snacks-bag","title":"他说这些都是顺便买的。","body":"相册｜明宰铉坐在沙发上，怀里抱着一大袋零食，旁边放着刚买回来的东西。照片由你拍摄。原稿未附图片，保留为照片说明占位。","time":"22:09","kind":"text","sender":"你"},{"id":"album-six-things","title":"顺便买了六样东西的人。","body":"相册｜明宰铉正在整理你买回来的东西。原稿未附图片，保留为照片说明占位。","time":"22:09","kind":"text","sender":"你"}],"camera":[],"safari":[],"notes":[{"id":"note-dad-2041","title":"爸爸","body":"他今天又问我冷不冷。\n\n明明我穿了外套。\n\n还问我有没有钱。\n\n我说有。\n\n他不信。\n\n转了钱。","time":"20:41","kind":"note","folder":"备忘录"},{"id":"note-dad-2041-followup","title":"爸爸（续）","body":"根本不需要，但还是收了。\n\n明天还要问他能不能买那个。","time":"20:41","kind":"note","folder":"备忘录"},{"id":"note-last-entry","title":"今天","body":"爸爸真的很烦。\n\n但是有爸爸在家，好像也挺好的。\n\n\n明天让他给我买蛋糕。","time":"00:13","kind":"note","folder":"备忘录"}],"calendar":[],"mail":[],"clock":[],"reminders":[],"files":[],"music":[],"maps":[],"weather":[],"wallet":[],"health":[],"find":[],"calculator":[],"settings":[],"weibo":[],"redbook":[],"douyin":[],"bilibili":[],"alipay":[],"taobao":[],"netease":[],"delivery":[],"forum":[],"instagram":[],"tiktok":[],"twitter":[],"youtube":[],"snapchat":[],"facebook":[],"reddit":[],"spotify":[],"netflix":[],"pinterest":[],"threads":[],"appstore":[]},"variables":{},"events":[],"tests":[]}
+{
+  "scriptVersion": 1,
+  "id": "mingjaehyun-daughter-phone",
+  "title": "捡手机｜明宰铉女儿模拟器",
+  "description": "以女儿的视角翻看手机：所有剧情对话与手机里的记录都收进 KakaoTalk；女儿的消息通过点击发送，不需要输入文字。",
+  "revision": 4,
+  "phone": {
+    "owner": "你",
+    "date": "2026-10-25",
+    "time": "00:13",
+    "battery": 94,
+    "network": "5G",
+    "wallpaper": "apple-wwdc26"
+  },
+  "installedApps": [
+    "appstore",
+    {
+      "id": "settings",
+      "name": "设置",
+      "installed": true,
+      "visible": true,
+      "dock": false,
+      "folder": "",
+      "icon": ""
+    },
+    {
+      "id": "calculator",
+      "name": "计算器",
+      "installed": true,
+      "visible": true,
+      "dock": false,
+      "folder": "",
+      "icon": ""
+    },
+    {
+      "id": "phone",
+      "name": "电话",
+      "installed": true,
+      "visible": true,
+      "dock": true,
+      "folder": "",
+      "icon": ""
+    },
+    {
+      "id": "messages",
+      "name": "短信",
+      "installed": true,
+      "visible": true,
+      "dock": true,
+      "folder": "",
+      "icon": ""
+    },
+    {
+      "id": "camera",
+      "name": "相机",
+      "installed": true,
+      "visible": true,
+      "dock": false,
+      "folder": "",
+      "icon": ""
+    },
+    {
+      "id": "safari",
+      "name": "浏览器",
+      "installed": true,
+      "visible": true,
+      "dock": false,
+      "folder": "",
+      "icon": ""
+    },
+    {
+      "id": "music",
+      "name": "音乐",
+      "installed": true,
+      "visible": true,
+      "dock": false,
+      "folder": "",
+      "icon": ""
+    },
+    {
+      "id": "instagram",
+      "name": "Instagram",
+      "installed": true,
+      "visible": true,
+      "dock": false,
+      "folder": "",
+      "icon": ""
+    },
+    {
+      "id": "twitter",
+      "name": "X",
+      "installed": true,
+      "visible": true,
+      "dock": false,
+      "folder": "",
+      "icon": ""
+    },
+    {
+      "id": "kakao",
+      "name": "KakaoTalk",
+      "installed": true,
+      "visible": true,
+      "dock": true,
+      "folder": "",
+      "icon": ""
+    }
+  ],
+  "contacts": [
+    {
+      "id": "ming-jaehyun",
+      "name": "明宰铉",
+      "phone": "",
+      "avatar": "",
+      "bio": "爸爸。话不多，但总是把女儿喜欢的东西带回家。"
+    }
+  ],
+  "chats": [
+    {
+      "id": "wechat-ming-jaehyun",
+      "app": "kakao",
+      "title": "明宰铉",
+      "participants": [
+        "owner",
+        "ming-jaehyun"
+      ],
+      "messages": [
+        {
+          "id": "chat-after-school-01",
+          "body": "放学了吗",
+          "senderId": "ming-jaehyun",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-after-school-02",
+          "body": "嗯",
+          "senderId": "owner",
+          "title": "明宰铉",
+          "meta": {
+            "interactive": "true"
+          }
+        },
+        {
+          "id": "chat-after-school-03",
+          "body": "在哪",
+          "senderId": "ming-jaehyun",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-after-school-04",
+          "body": "学校门口",
+          "senderId": "owner",
+          "title": "明宰铉",
+          "meta": {
+            "interactive": "true"
+          }
+        },
+        {
+          "id": "chat-after-school-05",
+          "body": "等爸爸",
+          "senderId": "ming-jaehyun",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-after-school-06",
+          "body": "不用，我自己回去",
+          "senderId": "owner",
+          "title": "明宰铉",
+          "meta": {
+            "interactive": "true"
+          }
+        },
+        {
+          "id": "chat-after-school-07",
+          "body": "我已经出门了",
+          "senderId": "ming-jaehyun",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-after-school-08",
+          "body": "……",
+          "senderId": "owner",
+          "title": "明宰铉",
+          "meta": {
+            "interactive": "true"
+          }
+        },
+        {
+          "id": "chat-after-school-09",
+          "body": "你为什么不提前告诉我",
+          "senderId": "owner",
+          "title": "明宰铉",
+          "meta": {
+            "interactive": "true"
+          }
+        },
+        {
+          "id": "chat-after-school-10",
+          "body": "现在告诉了",
+          "senderId": "ming-jaehyun",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-after-school-11",
+          "body": "那你来都来了",
+          "senderId": "owner",
+          "title": "明宰铉",
+          "meta": {
+            "interactive": "true"
+          }
+        },
+        {
+          "id": "chat-after-school-12",
+          "body": "嗯",
+          "senderId": "ming-jaehyun",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-after-school-13",
+          "body": "给你带了吃的",
+          "senderId": "ming-jaehyun",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-after-school-14",
+          "body": "什么",
+          "senderId": "owner",
+          "title": "明宰铉",
+          "meta": {
+            "interactive": "true"
+          }
+        },
+        {
+          "id": "chat-after-school-15",
+          "body": "不知道",
+          "senderId": "ming-jaehyun",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-after-school-16",
+          "body": "那你买什么了",
+          "senderId": "owner",
+          "title": "明宰铉",
+          "meta": {
+            "interactive": "true"
+          }
+        },
+        {
+          "id": "chat-after-school-17",
+          "body": "看到什么都觉得你可能喜欢",
+          "senderId": "ming-jaehyun",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-after-school-18",
+          "body": "买了几个？",
+          "senderId": "owner",
+          "title": "明宰铉",
+          "meta": {
+            "interactive": "true"
+          }
+        },
+        {
+          "id": "chat-after-school-19",
+          "body": "……",
+          "senderId": "ming-jaehyun",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-after-school-20",
+          "body": "几个",
+          "senderId": "owner",
+          "title": "明宰铉",
+          "meta": {
+            "interactive": "true"
+          }
+        },
+        {
+          "id": "chat-after-school-21",
+          "body": "六个",
+          "senderId": "ming-jaehyun",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-after-school-22",
+          "body": "我一个人怎么吃六个",
+          "senderId": "owner",
+          "title": "明宰铉",
+          "meta": {
+            "interactive": "true"
+          }
+        },
+        {
+          "id": "chat-after-school-23",
+          "body": "吃不完带回家",
+          "senderId": "ming-jaehyun",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-after-school-24",
+          "body": "你就是乱买",
+          "senderId": "owner",
+          "title": "明宰铉",
+          "meta": {
+            "interactive": "true"
+          }
+        },
+        {
+          "id": "chat-after-school-25",
+          "body": "嗯。",
+          "senderId": "ming-jaehyun",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-after-school-26",
+          "body": "爸爸愿意。",
+          "senderId": "ming-jaehyun",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-evening-01",
+          "body": "到家了吗",
+          "senderId": "ming-jaehyun",
+          "time": "18:27",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-evening-02",
+          "body": "到了",
+          "senderId": "owner",
+          "title": "明宰铉",
+          "meta": {
+            "interactive": "true"
+          }
+        },
+        {
+          "id": "chat-evening-03",
+          "body": "好",
+          "senderId": "ming-jaehyun",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-evening-04",
+          "body": "吃饭了吗",
+          "senderId": "ming-jaehyun",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-evening-05",
+          "body": "吃了",
+          "senderId": "owner",
+          "title": "明宰铉",
+          "meta": {
+            "interactive": "true"
+          }
+        },
+        {
+          "id": "chat-evening-06",
+          "body": "吃的什么",
+          "senderId": "ming-jaehyun",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-evening-07",
+          "body": "面",
+          "senderId": "owner",
+          "title": "明宰铉",
+          "meta": {
+            "interactive": "true"
+          }
+        },
+        {
+          "id": "chat-evening-08",
+          "body": "……",
+          "senderId": "ming-jaehyun",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-evening-09",
+          "body": "又吃面",
+          "senderId": "ming-jaehyun",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-evening-10",
+          "body": "方便",
+          "senderId": "owner",
+          "title": "明宰铉",
+          "meta": {
+            "interactive": "true"
+          }
+        },
+        {
+          "id": "chat-evening-11",
+          "body": "晚上爸爸给你做饭",
+          "senderId": "ming-jaehyun",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-evening-12",
+          "body": "你会做吗？",
+          "senderId": "owner",
+          "title": "明宰铉",
+          "meta": {
+            "interactive": "true"
+          }
+        },
+        {
+          "id": "chat-evening-13",
+          "body": "会",
+          "senderId": "ming-jaehyun",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-evening-14",
+          "body": "上次差点把锅烧了",
+          "senderId": "owner",
+          "title": "明宰铉",
+          "meta": {
+            "interactive": "true"
+          }
+        },
+        {
+          "id": "chat-evening-15",
+          "body": "那次是意外",
+          "senderId": "ming-jaehyun",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-evening-16",
+          "body": "你还把盐放成糖了",
+          "senderId": "owner",
+          "title": "明宰铉",
+          "meta": {
+            "interactive": "true"
+          }
+        },
+        {
+          "id": "chat-evening-17",
+          "body": "……",
+          "senderId": "ming-jaehyun",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-evening-18",
+          "body": "这次不会",
+          "senderId": "ming-jaehyun",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-evening-19",
+          "body": "你确定？",
+          "senderId": "owner",
+          "title": "明宰铉",
+          "meta": {
+            "interactive": "true"
+          }
+        },
+        {
+          "id": "chat-evening-20",
+          "body": "确定",
+          "senderId": "ming-jaehyun",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-evening-21",
+          "body": "你爸爸什么时候骗过你",
+          "senderId": "ming-jaehyun",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-evening-22",
+          "body": "很多次",
+          "senderId": "owner",
+          "title": "明宰铉",
+          "meta": {
+            "interactive": "true"
+          }
+        },
+        {
+          "id": "chat-evening-23",
+          "body": "没有",
+          "senderId": "ming-jaehyun",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-evening-24",
+          "body": "爸爸说有就是有",
+          "senderId": "ming-jaehyun",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-shopping-01",
+          "body": "爸爸",
+          "senderId": "owner",
+          "time": "21:16",
+          "title": "明宰铉",
+          "meta": {
+            "interactive": "true"
+          }
+        },
+        {
+          "id": "chat-shopping-02",
+          "body": "嗯",
+          "senderId": "ming-jaehyun",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-shopping-03",
+          "body": "我想买个东西",
+          "senderId": "owner",
+          "title": "明宰铉",
+          "meta": {
+            "interactive": "true"
+          }
+        },
+        {
+          "id": "chat-shopping-04",
+          "body": "买",
+          "senderId": "ming-jaehyun",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-shopping-05",
+          "body": "你都不知道是什么",
+          "senderId": "owner",
+          "title": "明宰铉",
+          "meta": {
+            "interactive": "true"
+          }
+        },
+        {
+          "id": "chat-shopping-06",
+          "body": "你先发给爸爸看看",
+          "senderId": "ming-jaehyun",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-shopping-07",
+          "body": "[商品链接]",
+          "senderId": "owner",
+          "title": "明宰铉",
+          "meta": {
+            "interactive": "true"
+          }
+        },
+        {
+          "id": "chat-shopping-08",
+          "body": "好可爱",
+          "senderId": "ming-jaehyun",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-shopping-09",
+          "body": "对吧！",
+          "senderId": "owner",
+          "title": "明宰铉",
+          "meta": {
+            "interactive": "true"
+          }
+        },
+        {
+          "id": "chat-shopping-10",
+          "body": "买",
+          "senderId": "ming-jaehyun",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-shopping-11",
+          "body": "可是有点贵",
+          "senderId": "owner",
+          "title": "明宰铉",
+          "meta": {
+            "interactive": "true"
+          }
+        },
+        {
+          "id": "chat-shopping-12",
+          "body": "爸爸买",
+          "senderId": "ming-jaehyun",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-shopping-13",
+          "body": "不用，我自己有钱",
+          "senderId": "owner",
+          "title": "明宰铉",
+          "meta": {
+            "interactive": "true"
+          }
+        },
+        {
+          "id": "chat-shopping-14",
+          "body": "你的钱留着",
+          "senderId": "ming-jaehyun",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-shopping-15",
+          "body": "为什么",
+          "senderId": "owner",
+          "title": "明宰铉",
+          "meta": {
+            "interactive": "true"
+          }
+        },
+        {
+          "id": "chat-shopping-16",
+          "body": "以后想买别的",
+          "senderId": "ming-jaehyun",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-shopping-17",
+          "body": "那你给我买？",
+          "senderId": "owner",
+          "title": "明宰铉",
+          "meta": {
+            "interactive": "true"
+          }
+        },
+        {
+          "id": "chat-shopping-18",
+          "body": "嗯",
+          "senderId": "ming-jaehyun",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-shopping-19",
+          "body": "你怎么什么都给我买",
+          "senderId": "owner",
+          "title": "明宰铉",
+          "meta": {
+            "interactive": "true"
+          }
+        },
+        {
+          "id": "chat-shopping-20",
+          "body": "因为你喜欢",
+          "senderId": "ming-jaehyun",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-night-01",
+          "body": "睡觉",
+          "senderId": "ming-jaehyun",
+          "time": "23:02",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-night-02",
+          "body": "不困",
+          "senderId": "owner",
+          "title": "明宰铉",
+          "meta": {
+            "interactive": "true"
+          }
+        },
+        {
+          "id": "chat-night-03",
+          "body": "明天不是还要早起",
+          "senderId": "ming-jaehyun",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-night-04",
+          "body": "知道",
+          "senderId": "owner",
+          "title": "明宰铉",
+          "meta": {
+            "interactive": "true"
+          }
+        },
+        {
+          "id": "chat-night-05",
+          "body": "手机放下",
+          "senderId": "ming-jaehyun",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-night-06",
+          "body": "你怎么知道我还在玩手机",
+          "senderId": "owner",
+          "title": "明宰铉",
+          "meta": {
+            "interactive": "true"
+          }
+        },
+        {
+          "id": "chat-night-07",
+          "body": "猜的",
+          "senderId": "ming-jaehyun",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-night-08",
+          "body": "那我现在就放",
+          "senderId": "owner",
+          "title": "明宰铉",
+          "meta": {
+            "interactive": "true"
+          }
+        },
+        {
+          "id": "chat-night-09",
+          "body": "嗯",
+          "senderId": "ming-jaehyun",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-night-10",
+          "body": "真的放了吗",
+          "senderId": "ming-jaehyun",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-night-11",
+          "body": "……",
+          "senderId": "owner",
+          "title": "明宰铉",
+          "meta": {
+            "interactive": "true"
+          }
+        },
+        {
+          "id": "chat-night-12",
+          "body": "你很烦",
+          "senderId": "owner",
+          "title": "明宰铉",
+          "meta": {
+            "interactive": "true"
+          }
+        },
+        {
+          "id": "chat-night-13",
+          "body": "睡吧",
+          "senderId": "ming-jaehyun",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-night-14",
+          "body": "晚安爸爸",
+          "senderId": "owner",
+          "title": "明宰铉",
+          "meta": {
+            "interactive": "true"
+          }
+        },
+        {
+          "id": "chat-night-15",
+          "body": "晚安",
+          "senderId": "ming-jaehyun",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-night-16",
+          "body": "明天想吃什么",
+          "senderId": "ming-jaehyun",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-night-17",
+          "body": "不知道",
+          "senderId": "owner",
+          "title": "明宰铉",
+          "meta": {
+            "interactive": "true"
+          }
+        },
+        {
+          "id": "chat-night-18",
+          "body": "那爸爸明天看着买",
+          "senderId": "ming-jaehyun",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-night-19",
+          "body": "好",
+          "senderId": "owner",
+          "title": "明宰铉",
+          "meta": {
+            "interactive": "true"
+          }
+        },
+        {
+          "id": "chat-night-20",
+          "body": "嗯",
+          "senderId": "ming-jaehyun",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-night-21",
+          "body": "小朋友",
+          "senderId": "ming-jaehyun",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-night-22",
+          "body": "干嘛",
+          "senderId": "owner",
+          "title": "明宰铉",
+          "meta": {
+            "interactive": "true"
+          }
+        },
+        {
+          "id": "chat-night-23",
+          "body": "没事",
+          "senderId": "ming-jaehyun",
+          "title": "明宰铉"
+        },
+        {
+          "id": "chat-night-24",
+          "body": "你有病啊",
+          "senderId": "owner",
+          "title": "明宰铉",
+          "meta": {
+            "interactive": "true"
+          }
+        },
+        {
+          "id": "chat-night-25",
+          "body": "睡觉。",
+          "senderId": "ming-jaehyun",
+          "title": "明宰铉"
+        }
+      ]
+    },
+    {
+      "id": "phone-records-kakao",
+      "app": "kakao",
+      "title": "手机里的记录",
+      "participants": [
+        "owner",
+        "ming-jaehyun"
+      ],
+      "messages": [
+        {
+          "id": "phone-record-1",
+          "title": "手机里的记录",
+          "body": "【相册｜偷拍成功。】\n相册「宰铉」｜一张明宰铉睡着时被拍下来的照片。原稿未附图片，保留为照片说明占位。",
+          "senderId": "owner",
+          "time": "18:03",
+          "meta": {
+            "interactive": "true"
+          }
+        },
+        {
+          "id": "phone-record-2",
+          "title": "手机里的记录",
+          "body": "【相册｜买东西还要戴帽子。】\n相册「宰铉」｜明宰铉戴着帽子站在便利店门口。原稿未附图片，保留为照片说明占位。",
+          "senderId": "owner",
+          "time": "18:03",
+          "meta": {
+            "interactive": "true"
+          }
+        },
+        {
+          "id": "phone-record-3",
+          "title": "手机里的记录",
+          "body": "【相册｜爸爸说他不喝，结果喝了一半。】\n相册「宰铉」｜明宰铉拿着两杯饮料。原稿未附图片，保留为照片说明占位。",
+          "senderId": "owner",
+          "time": "18:03",
+          "meta": {
+            "interactive": "true"
+          }
+        },
+        {
+          "id": "phone-record-4",
+          "title": "手机里的记录",
+          "body": "【相册｜他说这些都是顺便买的。】\n相册｜明宰铉坐在沙发上，怀里抱着一大袋零食，旁边放着刚买回来的东西。照片由你拍摄。原稿未附图片，保留为照片说明占位。",
+          "senderId": "owner",
+          "time": "22:09",
+          "meta": {
+            "interactive": "true"
+          }
+        },
+        {
+          "id": "phone-record-5",
+          "title": "手机里的记录",
+          "body": "【相册｜顺便买了六样东西的人。】\n相册｜明宰铉正在整理你买回来的东西。原稿未附图片，保留为照片说明占位。",
+          "senderId": "owner",
+          "time": "22:09",
+          "meta": {
+            "interactive": "true"
+          }
+        },
+        {
+          "id": "phone-record-6",
+          "title": "手机里的记录",
+          "body": "【备忘录｜爸爸】\n他今天又问我冷不冷。\n\n明明我穿了外套。\n\n还问我有没有钱。\n\n我说有。\n\n他不信。\n\n转了钱。",
+          "senderId": "owner",
+          "time": "20:41",
+          "meta": {
+            "interactive": "true"
+          }
+        },
+        {
+          "id": "phone-record-7",
+          "title": "手机里的记录",
+          "body": "【备忘录｜爸爸（续）】\n根本不需要，但还是收了。\n\n明天还要问他能不能买那个。",
+          "senderId": "owner",
+          "time": "20:41",
+          "meta": {
+            "interactive": "true"
+          }
+        },
+        {
+          "id": "phone-record-8",
+          "title": "手机里的记录",
+          "body": "【备忘录｜今天】\n爸爸真的很烦。\n\n但是有爸爸在家，好像也挺好的。\n\n\n明天让他给我买蛋糕。",
+          "senderId": "owner",
+          "time": "00:13",
+          "meta": {
+            "interactive": "true"
+          }
+        }
+      ]
+    }
+  ],
+  "content": {},
+  "variables": {},
+  "events": [],
+  "tests": []
+}
