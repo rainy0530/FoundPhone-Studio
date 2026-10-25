@@ -953,3 +953,113 @@
   font-size: 12px;
 }
 
+
+
+/* KakaoTalk story mode: compact, tappable scripted replies. */
+.ios18 .kakao-story-chat {
+  padding: 12px 12px 18px;
+  background: linear-gradient(180deg, #f7f5ef 0%, #f2efe7 100%);
+}
+.ios18 .kakao-story-chat .chat-time {
+  width: fit-content;
+  margin: 8px auto 18px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  color: #77746d;
+  background: #e7e3da;
+  font-size: 11px;
+  letter-spacing: .02em;
+}
+.ios18 .kakao-story-chat .message-row {
+  width: fit-content;
+  max-width: 86%;
+  margin: 8px 0;
+  gap: 7px;
+  align-items: flex-end;
+  border: 0;
+  background: transparent;
+  text-align: left;
+}
+.ios18 .kakao-story-chat .message-row .avatar {
+  flex: 0 0 28px;
+  width: 28px;
+  height: 28px;
+  border-radius: 10px;
+  background: #fee500;
+  color: #242424;
+  font-size: 13px;
+}
+.ios18 .kakao-story-chat .message-row .bubble {
+  position: relative;
+  padding: 10px 12px 17px;
+  border-radius: 5px 15px 15px 15px;
+  background: #fff;
+  color: #252525;
+  box-shadow: 0 2px 7px #28251c0a;
+  font-size: 13px;
+  line-height: 1.55;
+}
+.ios18 .kakao-story-chat .message-row .bubble > small {
+  position: absolute;
+  right: 7px;
+  bottom: 3px;
+  color: #99958c;
+  font-size: 9px;
+}
+.ios18 .kakao-story-chat .message-row.outgoing {
+  margin-left: auto;
+  flex-direction: row-reverse;
+}
+.ios18 .kakao-story-chat .message-row.outgoing .bubble {
+  border-radius: 15px 5px 15px 15px;
+  background: #fee500;
+}
+.ios18 .kakao-story-chat .kakao-next-reply {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  margin: 18px 0 12px;
+  padding: 13px 15px;
+  border: 1px solid #ead64a;
+  border-radius: 17px;
+  background: linear-gradient(135deg, #fffbe0, #fff3a5);
+  color: #26251f;
+  text-align: left;
+  box-shadow: 0 5px 14px #8e7c1d18;
+  transition: transform .16s ease, box-shadow .16s ease;
+}
+.ios18 .kakao-story-chat .kakao-next-reply:active {
+  transform: scale(.985);
+  box-shadow: 0 2px 7px #8e7c1d12;
+}
+.ios18 .kakao-story-chat .reply-chip-label {
+  padding: 3px 7px;
+  border-radius: 999px;
+  background: #242424;
+  color: #fee500;
+  font-size: 9px;
+  font-weight: 700;
+}
+.ios18 .kakao-story-chat .kakao-next-reply strong {
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 650;
+}
+.ios18 .kakao-story-chat .kakao-next-reply small {
+  color: #77715b;
+  font-size: 10px;
+}
+.ios18 .kakao-story-chat .chat-compose.muted {
+  position: sticky;
+  bottom: 0;
+  padding: 11px 12px;
+  border: 1px solid #e3dfd5;
+  border-radius: 15px;
+  background: #ffffffdc;
+  color: #8a867d;
+  text-align: center;
+  font-size: 11px;
+  backdrop-filter: blur(12px);
+}
