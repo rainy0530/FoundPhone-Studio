@@ -3,17 +3,26 @@
   "id": "mingjaehyun-daughter-phone",
   "title": "捡手机｜明宰铉女儿模拟器",
   "description": "以女儿的视角翻看手机：所有剧情对话与手机里的记录都收进 KakaoTalk；女儿的消息通过点击发送，不需要输入文字。",
-  "revision": 4,
+  "revision": 5,
   "phone": {
     "owner": "你",
     "date": "2026-10-25",
     "time": "00:13",
     "battery": 94,
     "network": "5G",
-    "wallpaper": "apple-wwdc26"
+    "wallpaper": "mingjaehyun-photo-wallpaper",
+    "passcode": "1101"
   },
   "installedApps": [
-    "appstore",
+    {
+      "id": "appstore",
+      "name": "App Store",
+      "installed": true,
+      "visible": true,
+      "dock": false,
+      "folder": "",
+      "icon": ""
+    },
     {
       "id": "settings",
       "name": "设置",
@@ -98,6 +107,15 @@
     {
       "id": "kakao",
       "name": "KakaoTalk",
+      "installed": true,
+      "visible": true,
+      "dock": true,
+      "folder": "",
+      "icon": ""
+    },
+    {
+      "id": "photos",
+      "name": "相册",
       "installed": true,
       "visible": true,
       "dock": true,
