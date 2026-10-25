@@ -1080,72 +1080,49 @@ function AppContent({
             const conversation = shown.filter((i) => i.title === thread);
             const interactive = app.id === "kakao" && !creator;
             const replyCount = interactiveProgress[thread] ?? 0;
-            const nextReplyIndex = interactive
-              ? conversation.reduce((found, item, index) =>
-                  found < 0 && item.outgoing && item.meta?.interactive === "true"
-                    ? index
-                    : found, -1)
-              : -1;
-            const visibleCount = interactive
-              ? conversation.reduce((count, item, index) => {
-                  if (index > nextReplyIndex && count === 0) return count;
-                  return count + 1;
-                }, 0)
-              : conversation.length;
-            const shownCount = interactive
-              ? (() => {
-                  let replies = 0;
-                  for (let index = 0; index < conversation.length; index++) {
-                    if (conversation[index].outgoing && conversation[index].meta?.interactive === "true") {
-                      if (replies >= replyCount) return index + 1;
-                      replies++;
-                    }
+            let shownCount = conversation.length;
+            if (interactive) {
+              let replies = 0;
+              for (let index = 0; index < conversation.length; index++) {
+                const item = conversation[index];
+                if (item.outgoing && item.meta?.interactive === "true") {
+                  if (replies >= replyCount) {
+                    shownCount = index;
+                    break;
                   }
-                  return conversation.length;
-                })()
-              : visibleCount;
+                  replies++;
+                }
+              }
+            }
             const nextIndex = interactive
               ? conversation.findIndex((item, index) =>
                   index >= shownCount && item.outgoing && item.meta?.interactive === "true")
               : -1;
-            const renderItem = (i: Item, isChoice = false) => (
-              <button
-                key={i.id}
-                className={`message-row ${i.outgoing ? "outgoing" : ""} ${isChoice ? "reply-choice" : ""}`}
-                onClick={() => {
-                  if (creator) onEdit(i);
-                  else if (isChoice) {
-                    onRead(i.id);
-                    setInteractiveProgress((old) => ({ ...old, [thread]: (old[thread] ?? 0) + 1 }));
-                  } else onRead(i.id);
-                }}
-              >
-                <span className="avatar">{i.sender.slice(0, 1)}</span>
-                <span className="bubble">
-                  {isChoice && <span className="reply-hint">点击发送</span>}
-                  {i.kind === "image" || i.kind === "audio" || i.kind === "video" ? (
-                    <Media item={i} />
-                  ) : i.kind === "transfer" ? (
-                    <span className="transfer">¥ {i.body}<small>虚构转账记录</small></span>
-                  ) : i.body}
-                  <small>{i.time.slice(-5)} {i.read ? "✓✓" : ""}</small>
-                  {creator && (i.hidden || i.unlock) && <LockKeyhole size={12} />}
-                </span>
-              </button>
-            );
             return <>
-              {conversation.slice(0, shownCount).map((item, index) =>
-                renderItem(item, interactive && index === shownCount - 1 &&
-                  item.outgoing && item.meta?.interactive === "true" &&
-                  replyCount === conversation.slice(0, shownCount).filter((m) => m.outgoing && m.meta?.interactive === "true").length - 1)
-              )}
+              {conversation.slice(0, shownCount).map((i) => (
+                <button key={i.id} className={`message-row ${i.outgoing ? "outgoing" : ""}`}
+                  onClick={() => creator ? onEdit(i) : onRead(i.id)}>
+                  <span className="avatar">{i.sender.slice(0, 1)}</span>
+                  <span className="bubble">
+                    {i.kind === "image" || i.kind === "audio" || i.kind === "video"
+                      ? <Media item={i} />
+                      : i.kind === "transfer"
+                        ? <span className="transfer">¥ {i.body}<small>虚构转账记录</small></span>
+                        : i.body}
+                    <small>{i.time.slice(-5)} {i.read ? "✓✓" : ""}</small>
+                    {creator && (i.hidden || i.unlock) && <LockKeyhole size={12} />}
+                  </span>
+                </button>
+              ))}
               {interactive && nextIndex >= 0 && (
                 <button className="kakao-next-reply" onClick={() => {
                   const next = conversation[nextIndex];
                   onRead(next.id);
                   setInteractiveProgress((old) => ({ ...old, [thread]: (old[thread] ?? 0) + 1 }));
                 }}>
-                  <span>下一句回复</span><strong>{conversation[nextIndex].body}</strong><small>点击发送，不用打字</small>
+                  <span className="reply-chip-label">点一下发送</span>
+                  <strong>{conversation[nextIndex].body}</strong>
+                  <small>不用打字 · 下一句女儿的回复</small>
                 </button>
               )}
             </>;
