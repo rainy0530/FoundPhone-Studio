@@ -96,18 +96,20 @@ function MessageList({
   onRead: (id: string) => void;
   whatsapp?: boolean;
 }) {
+  const itemKey = items.map((item) => item.id).join("|");
+  const totalItems = items.length;
   const [visibleCount, setVisibleCount] = useState(0);
   useEffect(() => {
     setVisibleCount(0);
-    if (!items.length) return;
+    if (!totalItems) return;
     let shown = 0;
     const timer = setInterval(() => {
       shown += 1;
       setVisibleCount(shown);
-      if (shown >= items.length) clearInterval(timer);
+      if (shown >= totalItems) clearInterval(timer);
     }, 650);
     return () => clearInterval(timer);
-  }, [items]);
+  }, [itemKey, totalItems]);
 
   const visibleItems = items.slice(0, visibleCount);
   return (
