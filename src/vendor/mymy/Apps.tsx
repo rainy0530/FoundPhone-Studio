@@ -64,37 +64,53 @@ function Back({ onClick }: { onClick: () => void }) {
 export function MymyKakao(p: SkinProps) {
   const [tab, setTab] = useSkinState<string>(p, "mymyTab", "聊天"),
     [sent, setSent] = useSkinState<string[]>(p, "mymyKktSent", []),
+    [storySentCount, setStorySentCount] = useSkinState<number>(
+      p,
+      "mymyKktStorySent:" + (p.thread || "list"),
+      0,
+    ),
     [draft, setDraft] = useState(""),
     [query, setQuery] = useState(""),
     [menu, setMenu] = useState(false);
   const list = grouped(p.items),
+    scriptMessages = p.items.filter((i) => i.title === p.thread),
+    interactiveStory = scriptMessages.some((i) => i.meta.interactive === "true"),
+    choiceIndexes = scriptMessages
+      .map((item, index) => (item.outgoing && item.meta.interactive === "true" ? index : -1))
+      .filter((index) => index >= 0),
+    nextChoiceIndex = choiceIndexes[storySentCount],
+    visibleScriptMessages = interactiveStory
+      ? scriptMessages.slice(0, nextChoiceIndex ?? scriptMessages.length)
+      : scriptMessages,
     messages = [
-      ...p.items.filter((i) => i.title === p.thread),
-      ...sent.flatMap((raw, index) => {
-        try {
-          const entry: unknown = JSON.parse(raw);
-          if (
-            !Array.isArray(entry) ||
-            entry.length !== 3 ||
-            !entry.every((v) => typeof v === "string") ||
-            entry[0] !== p.thread
-          )
-            return [];
-          return [
-            makeItem({
-              id: "local-kkt-" + index,
-              title: entry[0],
-              body: entry[1],
-              time: entry[2],
-              sender: p.owner || "机主",
-              outgoing: true,
-              meta: { local: "true" },
-            }),
-          ];
-        } catch {
-          return [];
-        }
-      }),
+      ...visibleScriptMessages,
+      ...(!interactiveStory
+        ? sent.flatMap((raw, index) => {
+            try {
+              const entry: unknown = JSON.parse(raw);
+              if (
+                !Array.isArray(entry) ||
+                entry.length !== 3 ||
+                !entry.every((v) => typeof v === "string") ||
+                entry[0] !== p.thread
+              )
+                return [];
+              return [
+                makeItem({
+                  id: "local-kkt-" + index,
+                  title: entry[0],
+                  body: entry[1],
+                  time: entry[2],
+                  sender: p.owner || "机主",
+                  outgoing: true,
+                  meta: { local: "true" },
+                }),
+              ];
+            } catch {
+              return [];
+            }
+          })
+        : []),
     ],
     scroll = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -155,46 +171,65 @@ export function MymyKakao(p: SkinProps) {
             })}
             {!messages.length && <Blank />}
           </div>
-          <form
-            className="kzinp"
-            onSubmit={(e) => {
-              e.preventDefault();
-              if (draft.trim()) {
-                setSent([
-                  ...sent,
-                  JSON.stringify([
-                    p.thread,
-                    draft.trim(),
-                    p.virtualTime || "09:41",
-                  ]),
-                ]);
-                setDraft("");
-              }
-            }}
-          >
-            <button
-              type="button"
-              aria-label="添加聊天内容"
-              onClick={() => (p.creator ? p.onAdd() : setMenu(!menu))}
+          {interactiveStory ? (
+            nextChoiceIndex !== undefined ? (
+              <div className="kzinp kzinp-choice">
+                <button
+                  className="go"
+                  aria-label="点击发送女儿的下一条消息"
+                  onClick={() => setStorySentCount((count) => count + 1)}
+                >
+                  {scriptMessages[nextChoiceIndex].body}
+                  <span>点击发送</span>
+                </button>
+              </div>
+            ) : (
+              <div className="kzinp kzinp-choice">
+                <span>剧情消息已读完</span>
+              </div>
+            )
+          ) : (
+            <form
+              className="kzinp"
+              onSubmit={(e) => {
+                e.preventDefault();
+                if (draft.trim()) {
+                  setSent([
+                    ...sent,
+                    JSON.stringify([
+                      p.thread,
+                      draft.trim(),
+                      p.virtualTime || "09:41",
+                    ]),
+                  ]);
+                  setDraft("");
+                }
+              }}
             >
-              <Plus size={21} />
-            </button>
-            <input
-              aria-label="KKT消息"
-              placeholder="输入消息"
-              value={draft}
-              maxLength={2000}
-              onChange={(e) => setDraft(e.target.value)}
-            />
-            <Smile size={22} />
-            <button
-              className={draft.trim() ? "go" : ""}
-              aria-label="发送KKT消息"
-              disabled={!draft.trim()}
-            >
-              ↑
-            </button>
-          </form>
+              <button
+                type="button"
+                aria-label="添加聊天内容"
+                onClick={() => (p.creator ? p.onAdd() : setMenu(!menu))}
+              >
+                <Plus size={21} />
+              </button>
+              <input
+                aria-label="KKT消息"
+                placeholder="输入消息"
+                value={draft}
+                maxLength={2000}
+                onChange={(e) => setDraft(e.target.value)}
+              />
+              <Smile size={22} />
+              <button
+                className={draft.trim() ? "go" : ""}
+                aria-label="发送KKT消息"
+                disabled={!draft.trim()}
+              >
+                ↑
+              </button>
+            </form>
+          )}
           {menu && (
             <div className="mymy-local-menu">
               <strong>{p.thread}</strong>
