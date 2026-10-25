@@ -133,7 +133,7 @@ export function validateLayout(raw: unknown, input: Work) {
 }
 export function useDeviceLayout(authored: Work, creator = false) {
   const base = useMemo(() => ensureAppStore(authored), [authored]);
-  const key = "foundphone-layout-v1:" + base.id;
+  const key = "foundphone-layout-v1:" + base.id + ":" + base.updatedAt;
   const [stored, setStored] = useState(() => {
       try {
         const text = localStorage.getItem(key);
