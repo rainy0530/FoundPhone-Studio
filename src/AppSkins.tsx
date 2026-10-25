@@ -1,6 +1,6 @@
 import { NativeComposer } from "./DeviceSystem";
 import { useSkinState } from "./skinState";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   ChevronLeft,
   Plus,
@@ -96,10 +96,24 @@ function MessageList({
   onRead: (id: string) => void;
   whatsapp?: boolean;
 }) {
+  const [visibleCount, setVisibleCount] = useState(0);
+  useEffect(() => {
+    setVisibleCount(0);
+    if (!items.length) return;
+    let shown = 0;
+    const timer = setInterval(() => {
+      shown += 1;
+      setVisibleCount(shown);
+      if (shown >= items.length) clearInterval(timer);
+    }, 650);
+    return () => clearInterval(timer);
+  }, [items]);
+
+  const visibleItems = items.slice(0, visibleCount);
   return (
     <div className={`skin-messages ${whatsapp ? "wa-wallpaper" : ""}`}>
       <div className="skin-date">{items[0]?.time.slice(0, 10)}</div>
-      {items.map((i) => (
+      {visibleItems.map((i) => (
         <div
           key={i.id}
           className={`skin-message ${i.outgoing ? "outgoing" : ""}`}
