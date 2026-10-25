@@ -1954,13 +1954,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "23:18"
         },
         {
           "id": "chat-namsan-212",
           "body": "不用",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "23:18"
         },
         {
           "id": "chat-namsan-213",
@@ -1969,19 +1971,22 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "23:19"
         },
         {
           "id": "chat-namsan-214",
           "body": "那好",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "23:19"
         },
         {
           "id": "chat-namsan-215",
           "body": "收到了",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "23:19"
         },
         {
           "id": "chat-namsan-216",
@@ -1990,13 +1995,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "23:20"
         },
         {
           "id": "chat-namsan-217",
           "body": "你的谢谢",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "23:20"
         },
         {
           "id": "chat-namsan-218",
@@ -2005,7 +2012,8 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "23:21"
         },
         {
           "id": "chat-namsan-219",
@@ -2014,19 +2022,22 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "23:21"
         },
         {
           "id": "chat-namsan-220",
           "body": "晚安",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "23:21"
         },
         {
           "id": "chat-namsan-221",
           "body": "早点睡",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "23:22"
         },
         {
           "id": "chat-namsan-222",
@@ -2035,13 +2046,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "23:22"
         },
         {
           "id": "chat-namsan-223",
           "body": "明天早上别赖床",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "23:22"
         },
         {
           "id": "chat-namsan-224",
@@ -2050,13 +2063,15 @@
           "title": "明宰铉",
           "meta": {
             "interactive": "true"
-          }
+          },
+          "time": "23:23"
         },
         {
           "id": "chat-namsan-225",
           "body": "嗯。",
           "senderId": "ming-jaehyun",
-          "title": "明宰铉"
+          "title": "明宰铉",
+          "time": "23:23"
         }
       ]
     },
@@ -2129,7 +2144,7 @@
           "title": "手机里的记录",
           "body": "走累了，他坐下来休息，我也陪他坐了一会儿。",
           "senderId": "owner",
-          "time": "22:40",
+          "time": "22:05",
           "kind": "text",
           "meta": {
             "interactive": "true"
@@ -2140,7 +2155,7 @@
           "title": "手机里的记录",
           "body": "今天和爸爸走了很久，看了南山塔和夜景，也去看了挂锁。这样的晚上很好。",
           "senderId": "owner",
-          "time": "23:12",
+          "time": "22:40",
           "kind": "text",
           "meta": {
             "interactive": "true"
@@ -2151,7 +2166,7 @@
           "title": "手机里的记录",
           "body": "回家的路上。过马路时爸爸会等我，有时还会伸手拉我一下。",
           "senderId": "owner",
-          "time": "22:05",
+          "time": "23:12",
           "kind": "text",
           "meta": {
             "interactive": "true"
