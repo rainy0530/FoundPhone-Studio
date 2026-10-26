@@ -147,16 +147,18 @@ function PhoneRuntime({
   const shell = useRef<HTMLDivElement>(null);
   const gesture = useRef({ x: 0, y: 0, time: 0, zone: "" });
   const [launchOrigin, setLaunchOrigin] = useState(screenOrigin);
-  const [lockWallpaper, setLockWallpaper] = useState("");
-  const [homeWallpaper, setHomeWallpaper] = useState("");
+  const defaultLockWallpaper = import.meta.env.BASE_URL + "assets/wallpapers/jaehyun-lock.jpg";
+  const defaultHomeWallpaper = import.meta.env.BASE_URL + "assets/wallpapers/jaehyun-home.jpg";
+  const [lockWallpaper, setLockWallpaper] = useState(defaultLockWallpaper);
+  const [homeWallpaper, setHomeWallpaper] = useState(defaultHomeWallpaper);
   useEffect(() => {
     const readWallpapers = () => {
       try {
-        setLockWallpaper(localStorage.getItem("foundphone-lock-wallpaper") || "");
-        setHomeWallpaper(localStorage.getItem("foundphone-home-wallpaper") || "");
+        setLockWallpaper(localStorage.getItem("foundphone-lock-wallpaper") || defaultLockWallpaper);
+        setHomeWallpaper(localStorage.getItem("foundphone-home-wallpaper") || defaultHomeWallpaper);
       } catch {
-        setLockWallpaper("");
-        setHomeWallpaper("");
+        setLockWallpaper(defaultLockWallpaper);
+        setHomeWallpaper(defaultHomeWallpaper);
       }
     };
     readWallpapers();
