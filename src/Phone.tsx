@@ -147,8 +147,8 @@ function PhoneRuntime({
   const shell = useRef<HTMLDivElement>(null);
   const gesture = useRef({ x: 0, y: 0, time: 0, zone: "" });
   const [launchOrigin, setLaunchOrigin] = useState(screenOrigin);
-  const defaultLockWallpaper = import.meta.env.BASE_URL + "assets/wallpapers/jaehyun-lock.jpeg";
-  const defaultHomeWallpaper = import.meta.env.BASE_URL + "assets/wallpapers/jaehyun-home.jpeg";
+  const defaultLockWallpaper = import.meta.env.BASE_URL + "assets/jaehyun-lock.jpeg";
+  const defaultHomeWallpaper = import.meta.env.BASE_URL + "assets/jaehyun-home.jpeg";
   const [lockWallpaper, setLockWallpaper] = useState(defaultLockWallpaper);
   const [homeWallpaper, setHomeWallpaper] = useState(defaultHomeWallpaper);
   useEffect(() => {
