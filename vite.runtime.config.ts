@@ -4,7 +4,15 @@ import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
 export default defineConfig(({ command }) => ({
   base: "./",
-  optimizeDeps: { entries: ["index.html"] },
+  optimizeDeps: { entries: ["index.html", "player.html"] },
+  build: {
+    rollupOptions: {
+      input: {
+        main: "index.html",
+        player: "player.html",
+      },
+    },
+  },
   plugins: [
     localIconPlugin(command),
     react(),
