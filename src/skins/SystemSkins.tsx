@@ -1,4 +1,4 @@
-import sharedSongUrl from "../../倒是很爱你.mp3?url";
+import sharedSongUrl from "../../李泳知_-_I_Need_A_Girl__Live_.MP3?url";
 export { WeatherSkin, HealthSkin } from "./CalibratedSystemApps";
 import { AudioPlayer, useTrack } from "../audio";
 import { useSkinState } from "../skinState";
@@ -819,7 +819,7 @@ export function MusicSkin(p: Props) {
         </div>
         <button className="music-track" onClick={() => { setPublicSongOpen(true); setLocalId(""); setSong(null); setSharedAudioError(false); setSharedAudioUrl(sharedSongUrl); }} style={{ width: "100%" }}>
           <small>♫</small>
-          <span><strong>倒是很爱你</strong><small>共享音乐 · 所有访客可播放</small></span>
+          <span><strong>I Need A Girl (Live) · 李泳知</strong><small>共享音乐 · 所有访客可播放</small></span>
           <span>▶</span>
         </button>
         {localSongs.map((item, index) => (
@@ -849,8 +849,8 @@ export function MusicSkin(p: Props) {
       </div>
       {publicSongOpen && !selected && (
         <div className="native-now-playing" style={{ display: "flex", flexDirection: "column", gap: 8, padding: 10 }}>
-          <strong>倒是很爱你</strong>
-          <audio key={sharedAudioUrl} controls playsInline preload="metadata" src={sharedAudioUrl} style={{ width: "100%" }} aria-label="播放倒是很爱你" onError={() => { if (sharedAudioUrl !== fallbackSongUrl) setSharedAudioUrl(fallbackSongUrl); else setSharedAudioError(true); }} />
+          <strong>I Need A Girl (Live) · 李泳知</strong>
+          <audio key={sharedAudioUrl} controls playsInline preload="metadata" src={sharedAudioUrl} style={{ width: "100%" }} aria-label="播放 I Need A Girl (Live)" onError={() => { if (sharedAudioUrl !== fallbackSongUrl) setSharedAudioUrl(fallbackSongUrl); else setSharedAudioError(true); }} />
           {sharedAudioError && <a href={fallbackSongUrl} target="_blank" rel="noopener noreferrer" style={{ fontSize: 12, color: "#ed365a" }}>播放器加载失败，点这里直接打开歌曲</a>}
           <button onClick={() => setPublicSongOpen(false)}>收起播放器</button>
         </div>
