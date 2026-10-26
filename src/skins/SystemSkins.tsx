@@ -761,7 +761,7 @@ export function MusicSkin(p: Props) {
         </div>
         <div style={{ textAlign: "center" }}>
           <h2 style={{ margin: "0 0 6px", fontSize: 25, fontWeight: 750 }}>I need a girl</h2>
-          <p style={{ margin: 0, opacity: .65, fontSize: 15 }}>李泳知</p>
+          <p style={{ margin: 0, opacity: .65, fontSize: 15 }}>jaehyun</p>
         </div>
         <div style={{ padding: "18px 12px", borderRadius: 20, background: "rgba(150,150,150,.09)" }}>
           <audio controls playsInline preload="metadata" src={sharedSongUrl} style={{ width: "100%", height: 62 }} aria-label="播放 I need a girl" />
