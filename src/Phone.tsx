@@ -147,6 +147,27 @@ function PhoneRuntime({
   const shell = useRef<HTMLDivElement>(null);
   const gesture = useRef({ x: 0, y: 0, time: 0, zone: "" });
   const [launchOrigin, setLaunchOrigin] = useState(screenOrigin);
+  const [lockWallpaper, setLockWallpaper] = useState("");
+  const [homeWallpaper, setHomeWallpaper] = useState("");
+  useEffect(() => {
+    const readWallpapers = () => {
+      try {
+        setLockWallpaper(localStorage.getItem("foundphone-lock-wallpaper") || "");
+        setHomeWallpaper(localStorage.getItem("foundphone-home-wallpaper") || "");
+      } catch {
+        setLockWallpaper("");
+        setHomeWallpaper("");
+      }
+    };
+    readWallpapers();
+    window.addEventListener("foundphone-wallpaper-change", readWallpapers);
+    window.addEventListener("storage", readWallpapers);
+    return () => {
+      window.removeEventListener("foundphone-wallpaper-change", readWallpapers);
+      window.removeEventListener("storage", readWallpapers);
+    };
+  }, []);
+  const activeWallpaper = locked ? lockWallpaper : homeWallpaper;
 
   const beginUnlock = () => {
     setPinError("");
@@ -319,6 +340,12 @@ function PhoneRuntime({
       <KeyboardContext.Provider value={setKeyboard}>
         <div
           className={`phone-screen wallpaper-${work.phone.wallpaper} ${locked ? "is-locked" : ""} ${app ? "in-app" : ""} ${keyboard ? "keyboard-open" : ""}`}
+          style={activeWallpaper ? {
+            backgroundImage: `url("${activeWallpaper}")`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          } : undefined}
           data-app={app}
           onDragStart={(e) => e.preventDefault()}
           onPointerDown={(e) => {
