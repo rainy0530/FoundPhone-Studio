@@ -883,8 +883,33 @@ function AppContent({
 }) {
   const [detail, setDetail] = useState<Item | null>(null);
   const [thread, setThread] = useState("");
-  const [interactiveProgress, setInteractiveProgress] = useState<Record<string, number>>({});
   const [typingThreads, setTypingThreads] = useState<Record<string, boolean>>({});
+  const [visibleChatCounts, setVisibleChatCounts] = useState<Record<string, number>>({});
+  const replyTimers = useRef<ReturnType<typeof setTimeout>[]>([]);
+  useEffect(() => () => replyTimers.current.forEach(clearTimeout), []);
+  const sendInteractiveReply = (conversation: Item[], nextIndex: number, conversationId: string) => {
+    if (typingThreads[conversationId]) return;
+    // Sending the daughter's message is immediate; incoming messages arrive gradually.
+    const nextOutgoing = conversation.findIndex((item, index) =>
+      index > nextIndex && item.outgoing && item.meta?.interactive === "true");
+    const end = nextOutgoing < 0 ? conversation.length : nextOutgoing;
+    const incoming = conversation.slice(nextIndex + 1, end);
+    setVisibleChatCounts((old) => ({ ...old, [conversationId]: nextIndex + 1 }));
+    setInteractiveProgress((old) => ({ ...old, [conversationId]: (old[conversationId] ?? 0) + 1 }));
+    if (!incoming.length) return;
+    setTypingThreads((old) => ({ ...old, [conversationId]: true }));
+    let wait = 900;
+    incoming.forEach((message, index) => {
+      wait += Math.min(3100, 1300 + message.body.length * 85);
+      const timer = setTimeout(() => {
+        setVisibleChatCounts((old) => ({ ...old, [conversationId]: nextIndex + index + 2 }));
+        onRead(message.id);
+        if (index === incoming.length - 1)
+          setTypingThreads((old) => ({ ...old, [conversationId]: false }));
+      }, wait);
+      replyTimers.current.push(timer);
+    });
+  };
   const [tab, setTab] = useState(app.tabs[0]);
   const [q, setQ] = useState("");
   const [pw, setPw] = useState("");
@@ -1076,26 +1101,19 @@ function AppContent({
         detailView
       ) : app.engine === "messaging" && thread ? (
         <div className={`chat-content ${app.id === "kakao" ? "kakao-story-chat" : ""}`}>
-          <div className="chat-time">2026 年 9 月 1 日</div>
+          <div className="chat-time">{work.phone.date.replace(/^(\\d{4})-(\\d{2})-(\\d{2})$/, "$1 年 $2 月 $3 日")}</div>
           {(() => {
             const conversation = shown.filter((i) => i.title === thread);
             const interactive = app.id === "kakao" && !creator;
             const replyCount = interactiveProgress[thread] ?? 0;
             let shownCount = conversation.length;
             if (interactive) {
-              let replies = 0;
-              for (let index = 0; index < conversation.length; index++) {
-                const item = conversation[index];
-                if (item.outgoing && item.meta?.interactive === "true") {
-                  if (replies >= replyCount) {
-                    shownCount = index;
-                    break;
-                  }
-                  replies++;
-                }
-              }
+              // First show the messages that precede the first player response.
+              const firstReply = conversation.findIndex((item) =>
+                item.outgoing && item.meta?.interactive === "true");
+              shownCount = visibleChatCounts[thread] ?? (firstReply < 0 ? conversation.length : firstReply);
             }
-            const nextIndex = interactive
+            const nextIndex = interactive && !typingThreads[thread]
               ? conversation.findIndex((item, index) =>
                   index >= shownCount && item.outgoing && item.meta?.interactive === "true")
               : -1;
@@ -1121,15 +1139,7 @@ function AppContent({
                 </div>
               )}
               {interactive && nextIndex >= 0 && !typingThreads[thread] && (
-                <button className="kakao-next-reply" onClick={() => {
-                  const next = conversation[nextIndex];
-                  setTypingThreads((old) => ({ ...old, [thread]: true }));
-                  window.setTimeout(() => {
-                    onRead(next.id);
-                    setInteractiveProgress((old) => ({ ...old, [thread]: (old[thread] ?? 0) + 1 }));
-                    setTypingThreads((old) => ({ ...old, [thread]: false }));
-                  }, 950 + (next.body.length % 5) * 170);
-                }}>
+                <button className="kakao-next-reply" onClick={() => sendInteractiveReply(conversation, nextIndex, thread)}>
                   <span className="reply-chip-label">点一下发送</span>
                   <strong>{conversation[nextIndex].body}</strong>
                   <small>不用打字 · 发送后稍等片刻</small>
