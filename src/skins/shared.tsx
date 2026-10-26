@@ -1,3 +1,4 @@
+import jaehyunAvatar from "../../截屏 2026-10-26 19.56.17.png?url";
 import {
   ChevronLeft,
   ChevronRight,
@@ -93,10 +94,11 @@ export function Avatar({
   round?: boolean;
   src?: string;
 }) {
+  const avatarSrc = /明宰铉|명재현|jaehyun/i.test(name) ? jaehyunAvatar : safeMedia(src);
   return (
     <span className={`catalog-avatar ${round ? "round" : ""}`}>
-      {safeMedia(src)?.startsWith("data:image/") ? (
-        <img src={safeMedia(src)} alt="" />
+      {avatarSrc && (avatarSrc === jaehyunAvatar || avatarSrc.startsWith("data:image/")) ? (
+        <img src={avatarSrc} alt="" />
       ) : (
         name.slice(0, 1) || "人"
       )}
