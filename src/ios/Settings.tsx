@@ -65,10 +65,10 @@ export function NativeSettings({
     [bluetooth, setBluetooth] = useState(true),
     [lowPower, setLowPower] = useState(false),
     [lockWallpaper, setLockWallpaper] = useState(() => {
-      try { return localStorage.getItem("foundphone-lock-wallpaper") || import.meta.env.BASE_URL + "IMG_2380.jpg"; } catch { return import.meta.env.BASE_URL + "IMG_2380.jpg"; }
+      try { return localStorage.getItem("foundphone-lock-wallpaper") || "https://raw.githubusercontent.com/rainy0530/FoundPhone-Studio/main/IMG_2380.jpg"; } catch { return "https://raw.githubusercontent.com/rainy0530/FoundPhone-Studio/main/IMG_2380.jpg"; }
     }),
     [homeWallpaper, setHomeWallpaper] = useState(() => {
-      try { return localStorage.getItem("foundphone-home-wallpaper") || import.meta.env.BASE_URL + "IMG_2374.jpg"; } catch { return import.meta.env.BASE_URL + "IMG_2374.jpg"; }
+      try { return localStorage.getItem("foundphone-home-wallpaper") || "https://raw.githubusercontent.com/rainy0530/FoundPhone-Studio/main/IMG_2374.jpg"; } catch { return "https://raw.githubusercontent.com/rainy0530/FoundPhone-Studio/main/IMG_2374.jpg"; }
     }),
     [wallpaperError, setWallpaperError] = useState("");
 
@@ -116,8 +116,8 @@ export function NativeSettings({
   const clearWallpaper = (kind: "lock" | "home") => {
     const key = kind === "lock" ? "foundphone-lock-wallpaper" : "foundphone-home-wallpaper";
     try { localStorage.removeItem(key); } catch { setWallpaperError("浏览器无法清除已保存的壁纸。"); }
-    if (kind === "lock") setLockWallpaper(import.meta.env.BASE_URL + "IMG_2380.jpg");
-    else setHomeWallpaper(import.meta.env.BASE_URL + "IMG_2374.jpg");
+    if (kind === "lock") setLockWallpaper("https://raw.githubusercontent.com/rainy0530/FoundPhone-Studio/main/IMG_2380.jpg");
+    else setHomeWallpaper("https://raw.githubusercontent.com/rainy0530/FoundPhone-Studio/main/IMG_2374.jpg");
     window.dispatchEvent(new CustomEvent("foundphone-wallpaper-change"));
     setWallpaperError("");
   };
