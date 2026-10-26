@@ -1,6 +1,5 @@
 import sharedSongUrl from "../../李泳知_-_I_Need_A_Girl__Live_.MP3?url";
 export { WeatherSkin, HealthSkin } from "./CalibratedSystemApps";
-import { AudioPlayer, useTrack } from "../audio";
 import { useSkinState } from "../skinState";
 import {
   Calendar,
@@ -21,14 +20,13 @@ import {
   Music,
   Phone,
   Search,
-  SkipForward,
   Star,
   Users,
   Wallet,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { download } from "../io";
-import { safeMedia, type Item } from "../schema";
+import { type Item } from "../schema";
 import {
   Add,
   Avatar,
@@ -725,32 +723,7 @@ export function FilesSkin(p: Props) {
     </div>
   );
 }
-type LocalSong = { id: string; name: string; blob: Blob };
-const MUSIC_DB = "foundphone-local-music";
-function musicDatabase(): Promise<IDBDatabase> {
-  return new Promise((resolve, reject) => {
-    const request = indexedDB.open(MUSIC_DB, 1);
-    request.onupgradeneeded = () => {
-      if (!request.result.objectStoreNames.contains("songs"))
-        request.result.createObjectStore("songs", { keyPath: "id" });
-    };
-    request.onsuccess = () => resolve(request.result);
-    request.onerror = () => reject(request.error);
-  });
-}
-async function musicStore<T>(mode: IDBTransactionMode, operation: (store: IDBObjectStore) => IDBRequest<T>): Promise<T> {
-  const db = await musicDatabase();
-  return new Promise((resolve, reject) => {
-    const transaction = db.transaction("songs", mode);
-    const request = operation(transaction.objectStore("songs"));
-    request.onsuccess = () => resolve(request.result);
-    request.onerror = () => reject(request.error);
-    transaction.oncomplete = () => db.close();
-    transaction.onerror = () => { db.close(); reject(transaction.error); };
-  });
-}
-export function MusicSkin(p: Props) {
-  const [playing, setPlaying] = useState(false);
+function MusicSkin(p: Props) {
   return (
     <div className="catalog-skin native-music">
       <Header p={p} />
