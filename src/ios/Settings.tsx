@@ -63,7 +63,64 @@ export function NativeSettings({
     [airplane, setAirplane] = useState(false),
     [wifi, setWifi] = useState(true),
     [bluetooth, setBluetooth] = useState(true),
-    [lowPower, setLowPower] = useState(false);
+    [lowPower, setLowPower] = useState(false),
+    [lockWallpaper, setLockWallpaper] = useState(() => {
+      try { return localStorage.getItem("foundphone-lock-wallpaper") || ""; } catch { return ""; }
+    }),
+    [homeWallpaper, setHomeWallpaper] = useState(() => {
+      try { return localStorage.getItem("foundphone-home-wallpaper") || ""; } catch { return ""; }
+    }),
+    [wallpaperError, setWallpaperError] = useState("");
+
+  const chooseWallpaper = async (kind: "lock" | "home", file?: File) => {
+    if (!file) return;
+    if (!file.type.startsWith("image/")) {
+      setWallpaperError("请选择图片文件。");
+      return;
+    }
+    try {
+      const source = await new Promise<string>((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => typeof reader.result === "string" ? resolve(reader.result) : reject(new Error("无法读取图片"));
+        reader.onerror = () => reject(new Error("读取图片失败"));
+        reader.readAsDataURL(file);
+      });
+      const image = await new Promise<HTMLImageElement>((resolve, reject) => {
+        const img = new window.Image();
+        img.onload = () => resolve(img);
+        img.onerror = () => reject(new Error("无法识别这张图片，请尝试 JPG 或 PNG 格式"));
+        img.src = source;
+      });
+      const scale = Math.min(1, 1400 / image.width, 2400 / image.height);
+      const canvas = document.createElement("canvas");
+      canvas.width = Math.max(1, Math.round(image.width * scale));
+      canvas.height = Math.max(1, Math.round(image.height * scale));
+      const context = canvas.getContext("2d");
+      if (!context) throw new Error("图片处理失败");
+      context.drawImage(image, 0, 0, canvas.width, canvas.height);
+      const data = canvas.toDataURL("image/jpeg", 0.82);
+      const key = kind === "lock" ? "foundphone-lock-wallpaper" : "foundphone-home-wallpaper";
+      try {
+        localStorage.setItem(key, data);
+      } catch {
+        throw new Error("图片仍然太大，请选择较小的照片后重试。");
+      }
+      if (kind === "lock") setLockWallpaper(data);
+      else setHomeWallpaper(data);
+      window.dispatchEvent(new CustomEvent("foundphone-wallpaper-change"));
+      setWallpaperError("");
+    } catch (error) {
+      setWallpaperError(error instanceof Error ? error.message : "设置壁纸失败，请重试。");
+    }
+  };
+  const clearWallpaper = (kind: "lock" | "home") => {
+    const key = kind === "lock" ? "foundphone-lock-wallpaper" : "foundphone-home-wallpaper";
+    try { localStorage.removeItem(key); } catch {}
+    if (kind === "lock") setLockWallpaper("");
+    else setHomeWallpaper("");
+    window.dispatchEvent(new CustomEvent("foundphone-wallpaper-change"));
+    setWallpaperError("");
+  };
   const row = (label: string, value?: string, click?: () => void) => (
     <button key={label} className="settings-native-row" onClick={click}>
       <span>{label}</span>
@@ -170,6 +227,38 @@ export function NativeSettings({
           <p className="settings-page-caption">
             iOS 18.0 · 此为作品中的虚拟系统，不下载系统更新。
           </p>
+        );
+      case "墙纸":
+        return (
+          <div className="wallpaper-settings">
+            <p className="settings-page-caption">为锁定屏幕和主屏幕分别选择照片。照片只保存在当前浏览器中。</p>
+            <section className="wallpaper-picker-card">
+              <strong>锁定屏幕</strong>
+              <div className="wallpaper-preview lock-preview" style={lockWallpaper ? { backgroundImage: `url("${lockWallpaper}")` } : undefined}>
+                {!lockWallpaper && <span>锁屏预览</span>}
+                {lockWallpaper && <span className="wallpaper-preview-clock">{work.phone.time}</span>}
+              </div>
+              <label className="wallpaper-upload-button">
+                选择锁屏照片
+                <input type="file" accept="image/*" onChange={(e) => { void chooseWallpaper("lock", e.currentTarget.files?.[0]); e.currentTarget.value = ""; }} />
+              </label>
+              {lockWallpaper && <button className="wallpaper-clear-button" onClick={() => clearWallpaper("lock")}>恢复默认</button>}
+            </section>
+            <section className="wallpaper-picker-card">
+              <strong>主屏幕</strong>
+              <div className="wallpaper-preview home-preview" style={homeWallpaper ? { backgroundImage: `url("${homeWallpaper}")` } : undefined}>
+                {!homeWallpaper && <span>主屏幕预览</span>}
+                {homeWallpaper && <span className="wallpaper-preview-icons">●　●　●<br/>●　●　●<br/>●　●　●</span>}
+              </div>
+              <label className="wallpaper-upload-button">
+                选择主屏幕照片
+                <input type="file" accept="image/*" onChange={(e) => { void chooseWallpaper("home", e.currentTarget.files?.[0]); e.currentTarget.value = ""; }} />
+              </label>
+              {homeWallpaper && <button className="wallpaper-clear-button" onClick={() => clearWallpaper("home")}>恢复默认</button>}
+            </section>
+            {wallpaperError && <p className="wallpaper-error" role="alert">{wallpaperError}</p>}
+            <p className="settings-page-caption">提示：在 iPad 的照片选择窗口中选择图片即可。锁屏与主屏幕互不影响。</p>
+          </div>
         );
       default:
         return (
@@ -304,3 +393,15 @@ export function NativeSettings({
     </div>
   );
 }
+
+.wallpaper-settings { padding: 4px 0 28px; }
+.wallpaper-picker-card { background: #fff; border-radius: 22px; padding: 16px; margin: 0 0 18px; display: flex; flex-direction: column; gap: 12px; color: #171717; }
+.wallpaper-picker-card > strong { font-size: 17px; }
+.wallpaper-preview { width: 100%; aspect-ratio: 9 / 13; max-height: 310px; border-radius: 18px; background: linear-gradient(145deg,#d8d5ff,#8bb8d8 55%,#f5d8e9); background-size: cover; background-position: center; display: flex; align-items: flex-start; justify-content: center; overflow: hidden; color: white; text-shadow: 0 1px 8px #0008; }
+.wallpaper-preview span { margin-top: 28px; font-size: 18px; }
+.wallpaper-preview .wallpaper-preview-clock { margin-top: 45px; font-size: 36px; font-weight: 300; }
+.wallpaper-preview .wallpaper-preview-icons { margin-top: auto; margin-bottom: 35px; line-height: 2.3; font-size: 22px; }
+.wallpaper-upload-button { display: flex; align-items: center; justify-content: center; min-height: 44px; border-radius: 14px; background: #007aff; color: white; font-weight: 600; cursor: pointer; }
+.wallpaper-upload-button input { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+.wallpaper-clear-button { border: 0; background: #f2f2f7; border-radius: 12px; padding: 11px; color: #007aff; }
+.wallpaper-error { color: #d00; font-size: 13px; padding: 0 4px; }
