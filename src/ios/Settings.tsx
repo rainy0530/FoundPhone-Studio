@@ -65,10 +65,10 @@ export function NativeSettings({
     [bluetooth, setBluetooth] = useState(true),
     [lowPower, setLowPower] = useState(false),
     [lockWallpaper, setLockWallpaper] = useState(() => {
-      try { return localStorage.getItem("foundphone-lock-wallpaper") || ""; } catch { return ""; }
+      try { return localStorage.getItem("foundphone-lock-wallpaper") || import.meta.env.BASE_URL + "assets/wallpapers/jaehyun-lock.jpg"; } catch { return import.meta.env.BASE_URL + "assets/wallpapers/jaehyun-lock.jpg"; }
     }),
     [homeWallpaper, setHomeWallpaper] = useState(() => {
-      try { return localStorage.getItem("foundphone-home-wallpaper") || ""; } catch { return ""; }
+      try { return localStorage.getItem("foundphone-home-wallpaper") || import.meta.env.BASE_URL + "assets/wallpapers/jaehyun-home.jpg"; } catch { return import.meta.env.BASE_URL + "assets/wallpapers/jaehyun-home.jpg"; }
     }),
     [wallpaperError, setWallpaperError] = useState("");
 
@@ -116,8 +116,8 @@ export function NativeSettings({
   const clearWallpaper = (kind: "lock" | "home") => {
     const key = kind === "lock" ? "foundphone-lock-wallpaper" : "foundphone-home-wallpaper";
     try { localStorage.removeItem(key); } catch {}
-    if (kind === "lock") setLockWallpaper("");
-    else setHomeWallpaper("");
+    if (kind === "lock") setLockWallpaper(import.meta.env.BASE_URL + "assets/wallpapers/jaehyun-lock.jpg");
+    else setHomeWallpaper(import.meta.env.BASE_URL + "assets/wallpapers/jaehyun-home.jpg");
     window.dispatchEvent(new CustomEvent("foundphone-wallpaper-change"));
     setWallpaperError("");
   };
