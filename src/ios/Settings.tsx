@@ -115,7 +115,7 @@ export function NativeSettings({
   };
   const clearWallpaper = (kind: "lock" | "home") => {
     const key = kind === "lock" ? "foundphone-lock-wallpaper" : "foundphone-home-wallpaper";
-    try { localStorage.removeItem(key); } catch (error) { setWallpaperError("浏览器无法清除已保存的壁纸。"); }
+    try { localStorage.removeItem(key); } catch { setWallpaperError("浏览器无法清除已保存的壁纸。"); }
     if (kind === "lock") setLockWallpaper(import.meta.env.BASE_URL + "assets/wallpapers/jaehyun-lock.jpg");
     else setHomeWallpaper(import.meta.env.BASE_URL + "assets/wallpapers/jaehyun-home.jpg");
     window.dispatchEvent(new CustomEvent("foundphone-wallpaper-change"));
