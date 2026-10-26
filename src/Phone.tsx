@@ -143,6 +143,8 @@ function PhoneRuntime({
   const [recent, setRecent] = useState<string[]>([]);
   const appSnapshots = useRef(new Map<string, HTMLElement>());
   const [banner, setBanner] = useState("");
+  const [introKktNotice, setIntroKktNotice] = useState(false);
+  const [introKktDismissed, setIntroKktDismissed] = useState(false);
   const noticesSeen = useRef(0);
   const [contextApp, setContextApp] = useState("");
   const [deviceScale, setDeviceScale] = useState(0.84);
@@ -160,6 +162,11 @@ function PhoneRuntime({
     setHomeWallpaper(defaultHomeWallpaper);
   }, []);
   const activeWallpaper = locked ? lockWallpaper : homeWallpaper;
+  useEffect(() => {
+    if (creator || !ready) return;
+    const timer = window.setTimeout(() => setIntroKktNotice(true), 2000);
+    return () => window.clearTimeout(timer);
+  }, [creator, ready]);
 
   const beginUnlock = () => {
     setPinError("");
@@ -446,8 +453,11 @@ function PhoneRuntime({
                     : work
                 }
                 time={displayTime}
-                notices={s.notifications}
-                onDismiss={dismissNotice}
+                notices={introKktNotice && !introKktDismissed ? [...s.notifications, "KakaoTalk：明宰铉：放学了吗"] : s.notifications}
+                onDismiss={(index) => {
+                  if (index === s.notifications.length && introKktNotice && !introKktDismissed) setIntroKktDismissed(true);
+                  else dismissNotice(index);
+                }}
                 pinOpen={pinOpen}
                 setPinOpen={setPinOpen}
                 error={pinError}
