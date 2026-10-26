@@ -1324,3 +1324,8 @@
   grid-template-rows: repeat(6, 99px);
   grid-auto-rows: 99px;
 }
+
+/* Keep the original lock-screen portrait unobstructed by the large clock. */
+.ios18 .phone-screen.custom-lock-photo .lock-clock-block { top: 42px; }
+.ios18 .phone-screen.custom-lock-photo .lock-clock-block > p { font-size: 16px; }
+.ios18 .phone-screen.custom-lock-photo .lock-clock-block > h1 { font-size: 62px; line-height: 1.05; letter-spacing: -2px; }
