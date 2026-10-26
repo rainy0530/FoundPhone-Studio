@@ -147,8 +147,8 @@ function PhoneRuntime({
   const shell = useRef<HTMLDivElement>(null);
   const gesture = useRef({ x: 0, y: 0, time: 0, zone: "" });
   const [launchOrigin, setLaunchOrigin] = useState(screenOrigin);
-  const defaultLockWallpaper = import.meta.env.BASE_URL + "IMG_2380.jpg";
-  const defaultHomeWallpaper = import.meta.env.BASE_URL + "IMG_2374.jpg";
+  const defaultLockWallpaper = "https://raw.githubusercontent.com/rainy0530/FoundPhone-Studio/main/IMG_2380.jpg";
+  const defaultHomeWallpaper = "https://raw.githubusercontent.com/rainy0530/FoundPhone-Studio/main/IMG_2374.jpg";
   const [lockWallpaper, setLockWallpaper] = useState(defaultLockWallpaper);
   const [homeWallpaper, setHomeWallpaper] = useState(defaultHomeWallpaper);
   useEffect(() => {
