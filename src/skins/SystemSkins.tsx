@@ -750,126 +750,23 @@ async function musicStore<T>(mode: IDBTransactionMode, operation: (store: IDBObj
   });
 }
 export function MusicSkin(p: Props) {
-  const { tab, setTab, items } = useContent(p, "资料库");
-  const [song, setSong] = useTrack(p, items);
-  const [localSongs, setLocalSongs] = useState<LocalSong[]>([]);
-  const [localId, setLocalId] = useState("");
-  const [publicSongOpen, setPublicSongOpen] = useState(false);
-  const fallbackSongUrl = sharedSongUrl;
-  const [sharedAudioUrl, setSharedAudioUrl] = useState(sharedSongUrl);
-  const [sharedAudioError, setSharedAudioError] = useState(false);
-  const [error, setError] = useState("");
-  const [busy, setBusy] = useState(false);
-  const [urls, setUrls] = useState<Record<string, string>>({});
-  useEffect(() => {
-    let active = true;
-    musicStore<LocalSong[]>("readonly", (store) => store.getAll())
-      .then((songs) => { if (active) setLocalSongs(songs); })
-      .catch(() => { if (active) setError("无法读取本地音乐，请检查 Safari 是否允许网站存储数据。"); });
-    return () => { active = false; };
-  }, []);
-  useEffect(() => {
-    const next: Record<string, string> = {};
-    localSongs.forEach((track) => { next[track.id] = URL.createObjectURL(track.blob); });
-    setUrls(next);
-    return () => Object.values(next).forEach((url) => URL.revokeObjectURL(url));
-  }, [localSongs]);
-  async function addSongs(files: FileList | null) {
-    if (!files?.length) return;
-    setBusy(true); setError("");
-    const added: LocalSong[] = [];
-    try {
-      for (const file of Array.from(files)) {
-        if (!file.type.startsWith("audio/") && !/\\.(mp3|m4a|aac|wav|ogg|webm)$/i.test(file.name)) {
-          setError("部分文件不是支持的音频格式，已跳过。");
-          continue;
-        }
-        const entry: LocalSong = { id: crypto.randomUUID(), name: file.name.replace(/\\.[^.]+$/, ""), blob: file };
-        await musicStore("readwrite", (store) => store.put(entry));
-        added.push(entry);
-      }
-      setLocalSongs((current) => [...current, ...added]);
-      if (added.length) { setLocalId(added[0].id); setSong(null); setPublicSongOpen(false); }
-    } catch {
-      setError("保存失败，可能是 iPad 浏览器存储空间不足。请尝试较小的音频文件。");
-      const saved = await musicStore<LocalSong[]>("readonly", (store) => store.getAll()).catch(() => null);
-      if (saved) setLocalSongs(saved);
-    } finally { setBusy(false); }
-  }
-  async function removeSong(id: string) {
-    try {
-      await musicStore("readwrite", (store) => store.delete(id));
-      setLocalSongs((current) => current.filter((item) => item.id !== id));
-      if (localId === id) setLocalId("");
-    } catch { setError("删除失败，请稍后重试。"); }
-  }
-  const selected = localSongs.find((item) => item.id === localId);
+  const [playing, setPlaying] = useState(false);
   return (
     <div className="catalog-skin native-music">
       <Header p={p} />
-      <div className="catalog-scroll">
-        <h1>{tab}</h1>
-        <div style={{ padding: "12px 18px" }}>
-          <label style={{ display: "inline-block", padding: "12px 16px", background: "#ed365a", color: "white", borderRadius: 12, cursor: "pointer", fontWeight: 600 }}>
-            {busy ? "正在导入…" : "＋ 从 iPad 添加音乐"}
-            <input aria-label="选择本地音频文件" type="file" accept="audio/*,.mp3,.m4a,.aac,.wav,.ogg,.webm" multiple disabled={busy} style={{ display: "none" }} onChange={(event) => { void addSongs(event.target.files); event.target.value = ""; }} />
-          </label>
-          <p style={{ fontSize: 12, opacity: 0.7, marginTop: 8 }}>支持 MP3、M4A 等音频。歌曲保存在此浏览器中，不会上传到 GitHub。</p>
-          {error && <p role="alert" style={{ color: "#e7475e", fontSize: 12 }}>{error}</p>}
+      <div className="catalog-scroll" style={{ padding: "22px 18px 40px", display: "flex", flexDirection: "column", alignItems: "stretch", gap: 24 }}>
+        <h1 style={{ margin: 0 }}>音乐</h1>
+        <div style={{ background: "linear-gradient(145deg, #fa6388, #b42d6d)", borderRadius: 22, aspectRatio: "1 / 1", width: "100%", maxWidth: 340, alignSelf: "center", display: "flex", justifyContent: "center", alignItems: "center", boxShadow: "0 12px 30px rgba(160,35,85,.22)" }}>
+          <Music size={94} color="white" />
         </div>
-        <button className="music-track" onClick={() => { setPublicSongOpen(true); setLocalId(""); setSong(null); setSharedAudioError(false); setSharedAudioUrl(sharedSongUrl); }} style={{ width: "100%" }}>
-          <small>♫</small>
-          <span><strong>I Need A Girl (Live) · 李泳知</strong><small>共享音乐 · 所有访客可播放</small></span>
-          <span>▶</span>
-        </button>
-        {localSongs.map((item, index) => (
-          <div className="music-track" key={item.id} style={{ display: "flex", alignItems: "center" }}>
-            <button style={{ flex: 1, textAlign: "left", minWidth: 0 }} onClick={() => { setLocalId(item.id); setSong(null); setPublicSongOpen(false); }}>
-              <small>{index + 1}</small> <strong>{item.name}</strong>
-            </button>
-            <button aria-label={`删除${item.name}`} onClick={() => void removeSong(item.id)} style={{ padding: 10, color: "#ed365a" }}>删除</button>
-          </div>
-        ))}
-        {tab === "歌单" ? (
-          <div className="music-albums">
-            {groupItems(items, "我的音乐").map((g) => (
-              <button key={g} onClick={() => { const i = items.find((i) => (i.folder || "我的音乐") === g); if (i) { setSong(i); setLocalId(""); setPublicSongOpen(false); } }}>
-                <Music size={51} /><strong>{g}</strong>
-              </button>
-            ))}
-          </div>
-        ) : items.map((i, n) => (
-          <button className="music-track" key={i.id} onClick={() => { setSong(i); setLocalId(""); }}>
-            <small>{n + localSongs.length + 1}</small>
-            <span><strong>{i.title}</strong><small>{i.sender} · {meta(i, "album")}</small></span>
-            <span>{meta(i, "duration")}</span>
-          </button>
-        ))}
-        {!localSongs.length && <Empty items={items} />}
+        <div style={{ textAlign: "center" }}>
+          <h2 style={{ margin: "0 0 6px", fontSize: 25, fontWeight: 750 }}>I need a girl</h2>
+          <p style={{ margin: 0, opacity: .65, fontSize: 15 }}>李泳知</p>
+        </div>
+        <div style={{ padding: "18px 12px", borderRadius: 20, background: "rgba(150,150,150,.09)" }}>
+          <audio controls playsInline preload="metadata" src={sharedSongUrl} style={{ width: "100%", height: 62 }} aria-label="播放 I need a girl" />
+        </div>
       </div>
-      {publicSongOpen && !selected && (
-        <div className="native-now-playing" style={{ display: "flex", flexDirection: "column", gap: 8, padding: 10 }}>
-          <strong>I Need A Girl (Live) · 李泳知</strong>
-          <audio key={sharedAudioUrl} controls playsInline preload="metadata" src={sharedAudioUrl} style={{ width: "100%" }} aria-label="播放 I Need A Girl (Live)" onError={() => { if (sharedAudioUrl !== fallbackSongUrl) setSharedAudioUrl(fallbackSongUrl); else setSharedAudioError(true); }} />
-          {sharedAudioError && <a href={fallbackSongUrl} target="_blank" rel="noopener noreferrer" style={{ fontSize: 12, color: "#ed365a" }}>播放器加载失败，点这里直接打开歌曲</a>}
-          <button onClick={() => setPublicSongOpen(false)}>收起播放器</button>
-        </div>
-      )}
-      {selected && urls[selected.id] && (
-        <div className="native-now-playing" style={{ display: "flex", flexDirection: "column", gap: 8, padding: 10 }}>
-          <strong style={{ width: "100%", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{selected.name}</strong>
-          <audio key={selected.id} controls autoPlay src={urls[selected.id]} style={{ width: "100%" }} />
-          <button onClick={() => setLocalId(localSongs[(localSongs.findIndex((i) => i.id === selected.id) + 1) % localSongs.length].id)}>下一首 ›</button>
-        </div>
-      )}
-      {!selected && song && (
-        <div className="native-now-playing">
-          <button onClick={() => p.onItem(song)}><Music size={20} />{song.title}</button>
-          {song.kind === "audio" && safeMedia(song.media) ? <AudioPlayer p={p} item={song} /> : <button onClick={() => p.onItem(song)}>查看歌曲内容</button>}
-          <button aria-label="下一首" onClick={() => setSong(items[(items.findIndex((i) => i.id === song.id) + 1) % items.length])}><SkipForward size={18} /></button>
-        </div>
-      )}
-      <Tabs tabs={["资料库", "歌单"]} value={tab} set={setTab} icons={[<Music />, <Folder />]} />
     </div>
   );
 }
