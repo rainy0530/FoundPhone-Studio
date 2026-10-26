@@ -121,6 +121,7 @@ function PhoneRuntime({
   onOpen,
   runtime: external,
   onRuntime,
+  resetOnReload = false,
 }: {
   deviceLayout: ReturnType<typeof useDeviceLayout>;
   work: Work;
@@ -131,6 +132,7 @@ function PhoneRuntime({
   onOpen?: (app: string) => void;
   runtime?: Runtime;
   onRuntime?: (s: Runtime) => void;
+  resetOnReload?: boolean;
 }) {
   const [app, setApp] = useState("");
   const [homeRequest, setHomeRequest] = useState(0);
@@ -210,6 +212,11 @@ function PhoneRuntime({
   useEffect(() => {
     let active = true;
     if (creator || external) return;
+    if (resetOnReload) {
+      setOwn(dispatch(work, initialRuntime(work), "start"));
+      setReady(true);
+      return;
+    }
     void db.saves
       .get(work.id)
       .then((saved) => {
@@ -230,13 +237,13 @@ function PhoneRuntime({
     return () => {
       active = false;
     };
-  }, [work.id, work.updatedAt, creator, external]);
+  }, [work.id, work.updatedAt, creator, external, resetOnReload]);
   useEffect(() => {
-    if (!creator && !external && ready)
+    if (!creator && !external && !resetOnReload && ready)
       void db.saves
         .put({ id: work.id, state: own })
         .catch(() => setLoadError("存档失败，请检查浏览器存储权限。"));
-  }, [own, creator, work.id, external, ready]);
+  }, [own, creator, work.id, external, ready, resetOnReload]);
   useEffect(() => {
     if (creator || !ready) return;
     const interval = setInterval(() => {
