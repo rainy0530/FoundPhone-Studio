@@ -1133,7 +1133,6 @@ function AppContent({
           {(() => {
             const conversation = shown.filter((i) => i.title === thread);
             const interactive = app.id === "kakao" && !creator;
-            const replyCount = interactiveProgress[thread] ?? 0;
             let shownCount = conversation.length;
             if (interactive) {
               // First show the messages that precede the first player response.
