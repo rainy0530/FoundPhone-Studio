@@ -723,7 +723,7 @@ export function FilesSkin(p: Props) {
     </div>
   );
 }
-function MusicSkin(p: Props) {
+export function MusicSkin(p: Props) {
   return (
     <div className="catalog-skin native-music">
       <Header p={p} />
