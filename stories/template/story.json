@@ -3,7 +3,7 @@
   "id": "mingjaehyun-daughter-phone",
   "title": "捡手机｜明宰铉女儿模拟器",
   "description": "以女儿的视角翻看手机：所有剧情对话与手机里的记录都收进 KakaoTalk；女儿的消息通过点击发送，不需要输入文字。",
-  "revision": 8,
+  "revision": 9,
   "phone": {
     "owner": "你",
     "date": "2026-10-26",
@@ -2072,105 +2072,6 @@
           "senderId": "ming-jaehyun",
           "title": "明宰铉",
           "time": "23:23"
-        }
-      ]
-    },
-    {
-      "id": "phone-records-kakao",
-      "app": "kakao",
-      "title": "手机里的记录",
-      "participants": [
-        "owner",
-        "ming-jaehyun"
-      ],
-      "messages": [
-        {
-          "id": "phone-record-namsan-1",
-          "title": "手机里的记录",
-          "body": "和爸爸出去走走。吃完饭后，他说想在附近散步，最后我们一起去了南山塔。",
-          "senderId": "owner",
-          "time": "18:32",
-          "kind": "text",
-          "meta": {
-            "interactive": "true"
-          }
-        },
-        {
-          "id": "phone-record-namsan-2",
-          "title": "手机里的记录",
-          "body": "南山塔附近的夜景很漂亮。爸爸站着看了好一会儿，又问我冷不冷。",
-          "senderId": "owner",
-          "time": "19:35",
-          "kind": "text",
-          "meta": {
-            "interactive": "true"
-          }
-        },
-        {
-          "id": "phone-record-namsan-3",
-          "title": "手机里的记录",
-          "body": "爸爸在南山拍的照片。后来我也给他拍了一张，他问我拍得好不好看。",
-          "senderId": "owner",
-          "time": "20:02",
-          "kind": "text",
-          "meta": {
-            "interactive": "true"
-          }
-        },
-        {
-          "id": "phone-record-namsan-4",
-          "title": "手机里的记录",
-          "body": "南山塔的挂锁墙。我们一起看了很久，爸爸问我想不想挂一把锁。",
-          "senderId": "owner",
-          "time": "20:18",
-          "kind": "text",
-          "meta": {
-            "interactive": "true"
-          }
-        },
-        {
-          "id": "phone-record-namsan-5",
-          "title": "手机里的记录",
-          "body": "回去时拍下的背影。爸爸走在前面，却总会停下来看看我有没有跟上。",
-          "senderId": "owner",
-          "time": "21:55",
-          "kind": "text",
-          "meta": {
-            "interactive": "true"
-          }
-        },
-        {
-          "id": "phone-record-namsan-6",
-          "title": "手机里的记录",
-          "body": "走累了，他坐下来休息，我也陪他坐了一会儿。",
-          "senderId": "owner",
-          "time": "22:05",
-          "kind": "text",
-          "meta": {
-            "interactive": "true"
-          }
-        },
-        {
-          "id": "phone-record-namsan-7",
-          "title": "手机里的记录",
-          "body": "今天和爸爸走了很久，看了南山塔和夜景，也去看了挂锁。这样的晚上很好。",
-          "senderId": "owner",
-          "time": "22:40",
-          "kind": "text",
-          "meta": {
-            "interactive": "true"
-          }
-        },
-        {
-          "id": "phone-record-namsan-8",
-          "title": "手机里的记录",
-          "body": "回家的路上。过马路时爸爸会等我，有时还会伸手拉我一下。",
-          "senderId": "owner",
-          "time": "23:12",
-          "kind": "text",
-          "meta": {
-            "interactive": "true"
-          }
         }
       ]
     }
