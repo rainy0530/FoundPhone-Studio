@@ -145,7 +145,41 @@ export function NativeDetail({
           <div className="native-detail-scroll native-note-paper">
             <time>{item.time}</time>
             <h1>{item.title}</h1>
-            <RichText value={item.richText} fallback={item.body} />
+            {item.title.includes("和爸爸出去走走") ? (
+              <div className="story-photo-note" style={{ lineHeight: 1.8 }}>
+                {item.body.split(/\n\s*\n/).map((paragraph, index) => {
+                  const photoAfter: Record<number, string> = {
+                    1: "IMG_2378.jpeg",
+                    3: "IMG_2379.jpeg",
+                    4: "IMG_2376.jpeg",
+                    5: "b8e5330a3b54d29a24800329a6c12bb4.jpeg",
+                    6: "IMG_2387.jpeg",
+                    7: "IMG_2377.jpeg",
+                    8: "IMG_2375.jpeg",
+                    9: "IMG_2373.jpeg",
+                  };
+                  const photo = photoAfter[index];
+                  return (
+                    <div key={index}>
+                      <p style={{ whiteSpace: "pre-wrap", marginBottom: 16 }}>{paragraph}</p>
+                      {photo && (
+                        <img
+                          loading="lazy"
+                          src={`${import.meta.env.BASE_URL}${photo}`}
+                          alt={`和爸爸散步的照片 ${index}`}
+                          style={{ display: "block", width: "100%", height: "auto", objectFit: "contain", borderRadius: 8, margin: "12px 0 22px" }}
+                          onError={(event) => {
+                            event.currentTarget.style.display = "none";
+                          }}
+                        />
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            ) : (
+              <RichText value={item.richText} fallback={item.body} />
+            )}
           </div>
           <footer className="native-detail-toolbar">
             <button aria-label="返回文件夹" onClick={back}>
