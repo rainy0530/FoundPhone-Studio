@@ -115,7 +115,7 @@ export function NativeSettings({
   };
   const clearWallpaper = (kind: "lock" | "home") => {
     const key = kind === "lock" ? "foundphone-lock-wallpaper" : "foundphone-home-wallpaper";
-    try { localStorage.removeItem(key); } catch {}
+    try { localStorage.removeItem(key); } catch (error) { setWallpaperError("浏览器无法清除已保存的壁纸。"); }
     if (kind === "lock") setLockWallpaper(import.meta.env.BASE_URL + "assets/wallpapers/jaehyun-lock.jpg");
     else setHomeWallpaper(import.meta.env.BASE_URL + "assets/wallpapers/jaehyun-home.jpg");
     window.dispatchEvent(new CustomEvent("foundphone-wallpaper-change"));
@@ -248,7 +248,7 @@ export function NativeSettings({
               <strong>主屏幕</strong>
               <div className="wallpaper-preview home-preview" style={homeWallpaper ? { backgroundImage: `url("${homeWallpaper}")` } : undefined}>
                 {!homeWallpaper && <span>主屏幕预览</span>}
-                {homeWallpaper && <span className="wallpaper-preview-icons">●　●　●<br/>●　●　●<br/>●　●　●</span>}
+                {homeWallpaper && <span className="wallpaper-preview-icons">● · ● · ●<br/>● · ● · ●<br/>● · ● · ●</span>}
               </div>
               <label className="wallpaper-upload-button">
                 选择主屏幕照片
