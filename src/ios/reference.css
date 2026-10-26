@@ -741,3 +741,15 @@
   background: #fafafa;
   color: #ffadb7;
 }
+
+.wallpaper-settings { padding: 4px 0 28px; }
+.wallpaper-picker-card { background: #fff; border-radius: 22px; padding: 16px; margin: 0 0 18px; display: flex; flex-direction: column; gap: 12px; color: #171717; }
+.wallpaper-picker-card > strong { font-size: 17px; }
+.wallpaper-preview { width: 100%; aspect-ratio: 9 / 13; max-height: 310px; border-radius: 18px; background: linear-gradient(145deg,#d8d5ff,#8bb8d8 55%,#f5d8e9); background-size: cover; background-position: center; display: flex; align-items: flex-start; justify-content: center; overflow: hidden; color: white; text-shadow: 0 1px 8px #0008; }
+.wallpaper-preview span { margin-top: 28px; font-size: 18px; }
+.wallpaper-preview .wallpaper-preview-clock { margin-top: 45px; font-size: 36px; font-weight: 300; }
+.wallpaper-preview .wallpaper-preview-icons { margin-top: auto; margin-bottom: 35px; line-height: 2.3; font-size: 22px; }
+.wallpaper-upload-button { display: flex; align-items: center; justify-content: center; min-height: 44px; border-radius: 14px; background: #007aff; color: white; font-weight: 600; cursor: pointer; }
+.wallpaper-upload-button input { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+.wallpaper-clear-button { border: 0; background: #f2f2f7; border-radius: 12px; padding: 11px; color: #007aff; }
+.wallpaper-error { color: #d00; font-size: 13px; padding: 0 4px; }
