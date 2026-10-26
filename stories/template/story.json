@@ -11,7 +11,8 @@
     "battery": 94,
     "network": "5G",
     "wallpaper": "mingjaehyun-photo-wallpaper",
-    "passcode": "1101"
+    "passcode": "1101",
+    "notifications": true
   },
   "installedApps": [
     {
