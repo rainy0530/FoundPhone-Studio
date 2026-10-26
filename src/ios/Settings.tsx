@@ -65,10 +65,10 @@ export function NativeSettings({
     [bluetooth, setBluetooth] = useState(true),
     [lowPower, setLowPower] = useState(false),
     [lockWallpaper, setLockWallpaper] = useState(() => {
-      try { return localStorage.getItem("foundphone-lock-wallpaper") || ""; } catch { return ""; }
+      try { return localStorage.getItem("foundphone-lock-wallpaper") || import.meta.env.BASE_URL + "assets/wallpapers/jaehyun-lock.jpeg"; } catch { return import.meta.env.BASE_URL + "assets/wallpapers/jaehyun-lock.jpeg"; }
     }),
     [homeWallpaper, setHomeWallpaper] = useState(() => {
-      try { return localStorage.getItem("foundphone-home-wallpaper") || ""; } catch { return ""; }
+      try { return localStorage.getItem("foundphone-home-wallpaper") || import.meta.env.BASE_URL + "assets/wallpapers/jaehyun-home.jpeg"; } catch { return import.meta.env.BASE_URL + "assets/wallpapers/jaehyun-home.jpeg"; }
     }),
     [wallpaperError, setWallpaperError] = useState("");
 
@@ -116,8 +116,8 @@ export function NativeSettings({
   const clearWallpaper = (kind: "lock" | "home") => {
     const key = kind === "lock" ? "foundphone-lock-wallpaper" : "foundphone-home-wallpaper";
     try { localStorage.removeItem(key); } catch { setWallpaperError("浏览器无法清除已保存的壁纸。"); }
-    if (kind === "lock") setLockWallpaper("");
-    else setHomeWallpaper("");
+    if (kind === "lock") setLockWallpaper(import.meta.env.BASE_URL + "assets/wallpapers/jaehyun-lock.jpeg");
+    else setHomeWallpaper(import.meta.env.BASE_URL + "assets/wallpapers/jaehyun-home.jpeg");
     window.dispatchEvent(new CustomEvent("foundphone-wallpaper-change"));
     setWallpaperError("");
   };
