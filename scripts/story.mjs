@@ -1,4 +1,4 @@
-import { readFile, writeFile, mkdir } from "node:fs/promises";
+import { readFile, writeFile, mkdir, copyFile } from "node:fs/promises";
 import { createServer } from "vite";
 const [
   mode = "validate",
@@ -102,6 +102,15 @@ try {
     );
   } else if (mode === "build") {
     await mkdir("public", { recursive: true });
+    // The phone's wallpapers, memo photos and avatar are stored at the repository
+    // root. Copy them into Vite's public directory so their site-relative URLs
+    // work on GitHub Pages instead of returning 404.
+    for (const filename of [
+      "IMG_2373.jpeg", "IMG_2374.jpg", "IMG_2375.jpeg",
+      "IMG_2376.jpeg", "IMG_2377.jpeg", "IMG_2378.jpeg",
+      "IMG_2379.jpeg", "IMG_2380.jpg", "IMG_2387.jpeg",
+      "b8e5330a3b54d29a24800329a6c12bb4.jpeg",
+    ]) await copyFile(filename, `public/${filename}`);
     await writeFile("public/work.json", JSON.stringify(work, null, 2) + "\n");
     const blank = compileStory(
       JSON.parse(await readFile("stories/blank/story.json", "utf8")),
