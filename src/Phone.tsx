@@ -329,7 +329,7 @@ function PhoneRuntime({
     >
       <KeyboardContext.Provider value={setKeyboard}>
         <div
-          className={`phone-screen wallpaper-${work.phone.wallpaper} ${locked ? "is-locked" : ""} ${app ? "in-app" : ""} ${keyboard ? "keyboard-open" : ""}`}
+          className={`phone-screen wallpaper-${work.phone.wallpaper} ${locked && lockWallpaper ? "custom-lock-photo" : ""} ${locked ? "is-locked" : ""} ${app ? "in-app" : ""} ${keyboard ? "keyboard-open" : ""}`}
           style={activeWallpaper ? {
             backgroundImage: `url("${activeWallpaper}")`,
             backgroundSize: "cover",
