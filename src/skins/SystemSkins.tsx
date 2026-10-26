@@ -1,3 +1,4 @@
+import sharedSongUrl from "../../倒是很爱你.mp3?url";
 export { WeatherSkin, HealthSkin } from "./CalibratedSystemApps";
 import { AudioPlayer, useTrack } from "../audio";
 import { useSkinState } from "../skinState";
@@ -754,8 +755,7 @@ export function MusicSkin(p: Props) {
   const [localSongs, setLocalSongs] = useState<LocalSong[]>([]);
   const [localId, setLocalId] = useState("");
   const [publicSongOpen, setPublicSongOpen] = useState(false);
-  const sharedSongUrl = "https://cdn.jsdelivr.net/gh/rainy0530/FoundPhone-Studio@main/%E5%80%92%E6%98%AF%E5%BE%88%E7%88%B1%E4%BD%A0.mp3";
-  const fallbackSongUrl = "https://raw.githubusercontent.com/rainy0530/FoundPhone-Studio/main/%E5%80%92%E6%98%AF%E5%BE%88%E7%88%B1%E4%BD%A0.mp3";
+  const fallbackSongUrl = sharedSongUrl;
   const [sharedAudioUrl, setSharedAudioUrl] = useState(sharedSongUrl);
   const [sharedAudioError, setSharedAudioError] = useState(false);
   const [error, setError] = useState("");
