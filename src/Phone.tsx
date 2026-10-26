@@ -162,11 +162,7 @@ function PhoneRuntime({
     setHomeWallpaper(defaultHomeWallpaper);
   }, []);
   const activeWallpaper = locked ? lockWallpaper : homeWallpaper;
-  useEffect(() => {
-    if (creator || !ready) return;
-    const timer = window.setTimeout(() => setIntroKktNotice(true), 2000);
-    return () => window.clearTimeout(timer);
-  }, [creator, ready]);
+
 
   const beginUnlock = () => {
     setPinError("");
@@ -183,6 +179,11 @@ function PhoneRuntime({
   const [panel, setPanel] = useState("");
   const [own, setOwn] = useState(() => initialRuntime(work));
   const [ready, setReady] = useState(creator || !!external);
+  useEffect(() => {
+    if (creator || !ready) return;
+    const timer = window.setTimeout(() => setIntroKktNotice(true), 2000);
+    return () => window.clearTimeout(timer);
+  }, [creator, ready]);
   const [loadError, setLoadError] = useState("");
   useEffect(() => {
     const el = shell.current;
