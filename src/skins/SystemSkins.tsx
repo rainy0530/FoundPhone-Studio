@@ -218,7 +218,7 @@ export function PhotosSkin(p: Props) {
             <div className="photo-mosaic">
               {tab !== "收藏" && !album && notePhotos.map((filename, index) => (
                 <button key={filename} aria-label={`查看备忘录照片 ${index + 1}`} onClick={() => setOpenPhoto(index)}>
-                  <img src={photoUrl(filename)} loading="lazy" alt={`备忘录照片 ${index + 1}`} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                  <img src={photoUrl(filename)} loading="lazy" decoding="async" alt={`备忘录照片 ${index + 1}`} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                 </button>
               ))}
               {list.map((i) => (
@@ -240,7 +240,7 @@ export function PhotosSkin(p: Props) {
       {openPhoto !== null && (
         <div role="dialog" aria-modal="true" aria-label="查看备忘录照片" style={{ position: "absolute", inset: 0, zIndex: 40, background: "#090909", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", gap: 16, padding: 12 }}>
           <button onClick={() => setOpenPhoto(null)} style={{ alignSelf: "flex-start", color: "white", padding: 12 }}>‹ 返回相册</button>
-          <img src={photoUrl(notePhotos[openPhoto])} alt={`备忘录照片 ${openPhoto + 1}`} style={{ width: "100%", maxHeight: "72%", objectFit: "contain" }} />
+          <img src={photoUrl(notePhotos[openPhoto])} decoding="async" alt={`备忘录照片 ${openPhoto + 1}`} style={{ width: "100%", maxHeight: "72%", objectFit: "contain" }} />
           <div style={{ display: "flex", gap: 24, alignItems: "center", color: "white" }}>
             <button onClick={() => setOpenPhoto((openPhoto + notePhotos.length - 1) % notePhotos.length)} style={{ padding: 12 }}>‹ 上一张</button>
             <span>{openPhoto + 1} / {notePhotos.length}</span>
