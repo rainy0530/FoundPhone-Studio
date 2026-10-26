@@ -898,9 +898,9 @@ function AppContent({
     onRead(conversation[nextIndex].id);
     if (!incoming.length) return;
     setTypingThreads((old) => ({ ...old, [conversationId]: true }));
-    let wait = 900;
+    let wait = 1000;
     incoming.forEach((message, index) => {
-      wait += Math.min(3100, 1300 + message.body.length * 85);
+      if (index > 0) wait += 1000;
       const timer = setTimeout(() => {
         setVisibleChatCounts((old) => ({ ...old, [conversationId]: nextIndex + index + 2 }));
         onRead(message.id);
