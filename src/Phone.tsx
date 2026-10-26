@@ -982,7 +982,35 @@ function AppContent({
           {(detail.media || ["media", "social"].includes(app.engine)) && (
             <Media item={detail} />
           )}
-          <RichText value={detail.richText} fallback={detail.body} />
+          {app.id === "notes" && detail.id === "memo-2026-10-26-namsan-walk" ? (
+            <div className="story-photo-note" style={{ lineHeight: 1.8 }}>
+              {detail.body.split("\\n\\n").map((paragraph, index) => {
+                const photos: Record<number, string> = {
+                  1: "IMG_2378.jpeg",
+                  2: "IMG_2379.jpeg",
+                  3: "IMG_2376.jpeg",
+                  4: "b8e5330a3b54d29a24800329a6c12bb4.jpeg",
+                  5: "IMG_2387.jpeg",
+                  6: "IMG_2377.jpeg",
+                  7: "IMG_2375.jpeg",
+                  8: "IMG_2373.jpeg",
+                };
+                return (
+                  <div key={index}>
+                    <p style={{ whiteSpace: "pre-wrap", marginBottom: 16 }}>{paragraph}</p>
+                    {photos[index + 1] && (
+                      <img
+                        loading="lazy"
+                        src={`${import.meta.env.BASE_URL}${photos[index + 1]}`}
+                        alt={`散步记录照片 ${index + 1}`}
+                        style={{ display: "block", width: "100%", height: "auto", borderRadius: 8, marginBottom: 20 }}
+                      />
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          ) : <RichText value={detail.richText} fallback={detail.body} />}
           <dl className="item-metadata">
             {getFields(app.id)
               .filter((f) => detail.meta?.[f.key])
