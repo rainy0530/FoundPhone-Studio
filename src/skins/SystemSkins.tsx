@@ -753,6 +753,8 @@ export function MusicSkin(p: Props) {
   const [song, setSong] = useTrack(p, items);
   const [localSongs, setLocalSongs] = useState<LocalSong[]>([]);
   const [localId, setLocalId] = useState("");
+  const [publicSongOpen, setPublicSongOpen] = useState(false);
+  const sharedSongUrl = "https://raw.githubusercontent.com/rainy0530/FoundPhone-Studio/main/%E5%80%92%E6%98%AF%E5%BE%88%E7%88%B1%E4%BD%A0.mp3";
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
   const [urls, setUrls] = useState<Record<string, string>>({});
@@ -784,7 +786,7 @@ export function MusicSkin(p: Props) {
         added.push(entry);
       }
       setLocalSongs((current) => [...current, ...added]);
-      if (added.length) { setLocalId(added[0].id); setSong(null); }
+      if (added.length) { setLocalId(added[0].id); setSong(null); setPublicSongOpen(false); }
     } catch {
       setError("保存失败，可能是 iPad 浏览器存储空间不足。请尝试较小的音频文件。");
       const saved = await musicStore<LocalSong[]>("readonly", (store) => store.getAll()).catch(() => null);
@@ -812,9 +814,14 @@ export function MusicSkin(p: Props) {
           <p style={{ fontSize: 12, opacity: 0.7, marginTop: 8 }}>支持 MP3、M4A 等音频。歌曲保存在此浏览器中，不会上传到 GitHub。</p>
           {error && <p role="alert" style={{ color: "#e7475e", fontSize: 12 }}>{error}</p>}
         </div>
+        <button className="music-track" onClick={() => { setPublicSongOpen(true); setLocalId(""); setSong(null); }} style={{ width: "100%" }}>
+          <small>♫</small>
+          <span><strong>倒是很爱你</strong><small>共享音乐 · 所有访客可播放</small></span>
+          <span>▶</span>
+        </button>
         {localSongs.map((item, index) => (
           <div className="music-track" key={item.id} style={{ display: "flex", alignItems: "center" }}>
-            <button style={{ flex: 1, textAlign: "left", minWidth: 0 }} onClick={() => { setLocalId(item.id); setSong(null); }}>
+            <button style={{ flex: 1, textAlign: "left", minWidth: 0 }} onClick={() => { setLocalId(item.id); setSong(null); setPublicSongOpen(false); }}>
               <small>{index + 1}</small> <strong>{item.name}</strong>
             </button>
             <button aria-label={`删除${item.name}`} onClick={() => void removeSong(item.id)} style={{ padding: 10, color: "#ed365a" }}>删除</button>
@@ -823,7 +830,7 @@ export function MusicSkin(p: Props) {
         {tab === "歌单" ? (
           <div className="music-albums">
             {groupItems(items, "我的音乐").map((g) => (
-              <button key={g} onClick={() => { const i = items.find((i) => (i.folder || "我的音乐") === g); if (i) { setSong(i); setLocalId(""); } }}>
+              <button key={g} onClick={() => { const i = items.find((i) => (i.folder || "我的音乐") === g); if (i) { setSong(i); setLocalId(""); setPublicSongOpen(false); } }}>
                 <Music size={51} /><strong>{g}</strong>
               </button>
             ))}
@@ -837,6 +844,13 @@ export function MusicSkin(p: Props) {
         ))}
         {!localSongs.length && <Empty items={items} />}
       </div>
+      {publicSongOpen && !selected && (
+        <div className="native-now-playing" style={{ display: "flex", flexDirection: "column", gap: 8, padding: 10 }}>
+          <strong>倒是很爱你</strong>
+          <audio controls autoPlay preload="metadata" src={sharedSongUrl} style={{ width: "100%" }} aria-label="播放倒是很爱你" />
+          <button onClick={() => setPublicSongOpen(false)}>收起播放器</button>
+        </div>
+      )}
       {selected && urls[selected.id] && (
         <div className="native-now-playing" style={{ display: "flex", flexDirection: "column", gap: 8, padding: 10 }}>
           <strong style={{ width: "100%", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{selected.name}</strong>
