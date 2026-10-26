@@ -152,22 +152,10 @@ function PhoneRuntime({
   const [lockWallpaper, setLockWallpaper] = useState(defaultLockWallpaper);
   const [homeWallpaper, setHomeWallpaper] = useState(defaultHomeWallpaper);
   useEffect(() => {
-    const readWallpapers = () => {
-      try {
-        setLockWallpaper(localStorage.getItem("foundphone-lock-wallpaper") || defaultLockWallpaper);
-        setHomeWallpaper(localStorage.getItem("foundphone-home-wallpaper") || defaultHomeWallpaper);
-      } catch {
-        setLockWallpaper(defaultLockWallpaper);
-        setHomeWallpaper(defaultHomeWallpaper);
-      }
-    };
-    readWallpapers();
-    window.addEventListener("foundphone-wallpaper-change", readWallpapers);
-    window.addEventListener("storage", readWallpapers);
-    return () => {
-      window.removeEventListener("foundphone-wallpaper-change", readWallpapers);
-      window.removeEventListener("storage", readWallpapers);
-    };
+    // These two repository photos are the fixed defaults. Ignore any stale
+    // browser-stored wallpaper so an old selection cannot mask the new images.
+    setLockWallpaper(defaultLockWallpaper);
+    setHomeWallpaper(defaultHomeWallpaper);
   }, []);
   const activeWallpaper = locked ? lockWallpaper : homeWallpaper;
 
