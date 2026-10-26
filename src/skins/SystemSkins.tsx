@@ -184,6 +184,9 @@ export function ContactsSkin(p: Props) {
 export function PhotosSkin(p: Props) {
   const { tab, setTab, q, setQ, items } = useContent(p, "图库");
   const [album, setAlbum] = useState("");
+  const [openPhoto, setOpenPhoto] = useState<number | null>(null);
+  const notePhotos = ["IMG_2378.jpeg", "IMG_2379.jpeg", "IMG_2376.jpeg", "b8e5330a3b54d29a24800329a6c12bb4.jpeg", "IMG_2387.jpeg", "IMG_2377.jpeg", "IMG_2375.jpeg", "IMG_2373.jpeg"];
+  const photoUrl = (filename: string) => `${import.meta.env.BASE_URL}${filename}`;
   const list =
     tab === "收藏"
       ? items.filter((i) => i.favorite)
@@ -213,6 +216,11 @@ export function PhotosSkin(p: Props) {
           <>
             <SearchBox value={q} set={setQ} />
             <div className="photo-mosaic">
+              {tab !== "收藏" && !album && notePhotos.map((filename, index) => (
+                <button key={filename} aria-label={`查看备忘录照片 ${index + 1}`} onClick={() => setOpenPhoto(index)}>
+                  <img src={photoUrl(filename)} loading="lazy" alt={`备忘录照片 ${index + 1}`} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                </button>
+              ))}
               {list.map((i) => (
                 <button
                   aria-label={`查看${i.title}`}
@@ -224,11 +232,22 @@ export function PhotosSkin(p: Props) {
                 </button>
               ))}
             </div>
-            <p className="media-count">{list.length} 个项目</p>
+            <p className="media-count">{list.length + (tab !== "收藏" && !album ? notePhotos.length : 0)} 个项目</p>
           </>
         )}
         <Empty items={list} />
       </div>
+      {openPhoto !== null && (
+        <div role="dialog" aria-modal="true" aria-label="查看备忘录照片" style={{ position: "absolute", inset: 0, zIndex: 40, background: "#090909", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", gap: 16, padding: 12 }}>
+          <button onClick={() => setOpenPhoto(null)} style={{ alignSelf: "flex-start", color: "white", padding: 12 }}>‹ 返回相册</button>
+          <img src={photoUrl(notePhotos[openPhoto])} alt={`备忘录照片 ${openPhoto + 1}`} style={{ width: "100%", maxHeight: "72%", objectFit: "contain" }} />
+          <div style={{ display: "flex", gap: 24, alignItems: "center", color: "white" }}>
+            <button onClick={() => setOpenPhoto((openPhoto + notePhotos.length - 1) % notePhotos.length)} style={{ padding: 12 }}>‹ 上一张</button>
+            <span>{openPhoto + 1} / {notePhotos.length}</span>
+            <button onClick={() => setOpenPhoto((openPhoto + 1) % notePhotos.length)} style={{ padding: 12 }}>下一张 ›</button>
+          </div>
+        </div>
+      )}
       <Tabs
         tabs={["图库", "相簿", "收藏"]}
         value={tab}
