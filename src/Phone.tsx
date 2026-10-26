@@ -149,8 +149,8 @@ function PhoneRuntime({
   const shell = useRef<HTMLDivElement>(null);
   const gesture = useRef({ x: 0, y: 0, time: 0, zone: "" });
   const [launchOrigin, setLaunchOrigin] = useState(screenOrigin);
-  const defaultLockWallpaper = "https://raw.githubusercontent.com/rainy0530/FoundPhone-Studio/main/IMG_2380.jpg";
-  const defaultHomeWallpaper = "https://raw.githubusercontent.com/rainy0530/FoundPhone-Studio/main/IMG_2374.jpg";
+  const defaultLockWallpaper = `${import.meta.env.BASE_URL}IMG_2380.jpg`;
+  const defaultHomeWallpaper = `${import.meta.env.BASE_URL}IMG_2374.jpg`;
   const [lockWallpaper, setLockWallpaper] = useState(defaultLockWallpaper);
   const [homeWallpaper, setHomeWallpaper] = useState(defaultHomeWallpaper);
   useEffect(() => {
@@ -860,7 +860,7 @@ function Media({ item }: { item: Item }) {
     ) : item.kind === "video" ? (
       <video controls playsInline src={src} />
     ) : (
-      <img loading="lazy" src={src} alt={item.title} />
+      <img loading="lazy" decoding="async" src={src} alt={item.title} />
     )
   ) : (
     <div
@@ -1026,6 +1026,7 @@ function AppContent({
                     {photos[index + 1] && (
                       <img
                         loading="lazy"
+                        decoding="async"
                         src={`${import.meta.env.BASE_URL}${photos[index + 1]}`}
                         alt={`散步记录照片 ${index + 1}`}
                         style={{ display: "block", width: "100%", height: "auto", borderRadius: 8, marginBottom: 20 }}
