@@ -23,6 +23,9 @@ function StoryPlayer() {
       })
       .then((x) => {
         const w = validateWork(x);
+        // Enforce the published phone layout even when a stale work.json is served.
+        w.apps = w.apps.map((a) => ["instagram", "twitter"].includes(a.id) ? { ...a, installed: false, visible: false, dock: false } : a);
+        w.phone.notifications = true;
         document.title = w.title === "捡手机" ? "捡手机" : w.title + " · 捡手机";
         setWork(w);
       })
@@ -34,7 +37,7 @@ function StoryPlayer() {
   return (
     <main className="story-runtime">
       {work ? (
-        <Phone work={work} resetOnReload />
+        <Phone key="story-phone-lock-kkt-v3" work={work} resetOnReload />
       ) : (
         <p role="status">{error || "正在打开手机…"}</p>
       )}
