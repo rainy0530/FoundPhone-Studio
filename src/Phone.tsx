@@ -984,7 +984,7 @@ function AppContent({
           )}
           {app.id === "notes" && detail.id === "memo-2026-10-26-namsan-walk" ? (
             <div className="story-photo-note" style={{ lineHeight: 1.8 }}>
-              {detail.body.split("\\n\\n").map((paragraph, index) => {
+              {detail.body.split("\n\n").map((paragraph, index) => {
                 const photos: Record<number, string> = {
                   1: "IMG_2378.jpeg",
                   2: "IMG_2379.jpeg",
