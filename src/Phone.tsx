@@ -895,6 +895,7 @@ function AppContent({
     const end = nextOutgoing < 0 ? conversation.length : nextOutgoing;
     const incoming = conversation.slice(nextIndex + 1, end);
     setVisibleChatCounts((old) => ({ ...old, [conversationId]: nextIndex + 1 }));
+    onRead(conversation[nextIndex].id);
     setInteractiveProgress((old) => ({ ...old, [conversationId]: (old[conversationId] ?? 0) + 1 }));
     if (!incoming.length) return;
     setTypingThreads((old) => ({ ...old, [conversationId]: true }));
@@ -1101,7 +1102,7 @@ function AppContent({
         detailView
       ) : app.engine === "messaging" && thread ? (
         <div className={`chat-content ${app.id === "kakao" ? "kakao-story-chat" : ""}`}>
-          <div className="chat-time">{work.phone.date.replace(/^(\\d{4})-(\\d{2})-(\\d{2})$/, "$1 年 $2 月 $3 日")}</div>
+          <div className="chat-time">{work.phone.date.replace(/^(\d{4})-(\d{2})-(\d{2})$/, "$1 年 $2 月 $3 日")}</div>
           {(() => {
             const conversation = shown.filter((i) => i.title === thread);
             const interactive = app.id === "kakao" && !creator;
