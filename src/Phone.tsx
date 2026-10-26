@@ -301,7 +301,7 @@ function PhoneRuntime({
     onOpen?.(id);
     event("openApp", id);
   };
-  const installedApps = work.apps.filter((a) => a.installed);
+  const installedApps = work.apps.filter((a) => a.installed && !["instagram", "twitter"].includes(a.id));
   const apps = installedApps.filter((a) => a.visible);
   const unlock = (pin = "") => {
     if (!work.phone.passcode || pin === work.phone.passcode) {
