@@ -89,8 +89,8 @@
     {
       "id": "instagram",
       "name": "Instagram",
-      "installed": true,
-      "visible": true,
+      "installed": false,
+      "visible": false,
       "dock": false,
       "folder": "",
       "icon": ""
@@ -98,8 +98,8 @@
     {
       "id": "twitter",
       "name": "X",
-      "installed": true,
-      "visible": true,
+      "installed": false,
+      "visible": false,
       "dock": false,
       "folder": "",
       "icon": ""
