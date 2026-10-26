@@ -898,7 +898,9 @@ function AppContent({
     onRead(conversation[nextIndex].id);
     if (!incoming.length) return;
     setTypingThreads((old) => ({ ...old, [conversationId]: true }));
-    let wait = 1000;
+    // Give the other person a natural pause before the first reply,
+    // then deliver each subsequent message at one-second intervals.
+    let wait = 2500;
     incoming.forEach((message, index) => {
       if (index > 0) wait += 1000;
       const timer = setTimeout(() => {
