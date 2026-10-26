@@ -900,7 +900,7 @@ function AppContent({
     setTypingThreads((old) => ({ ...old, [conversationId]: true }));
     // Give the other person a natural pause before the first reply,
     // then deliver each subsequent message at one-second intervals.
-    let wait = 2500;
+    let wait = 4000;
     incoming.forEach((message, index) => {
       if (index > 0) wait += 1000;
       const timer = setTimeout(() => {
