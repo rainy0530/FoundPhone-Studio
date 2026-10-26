@@ -34,7 +34,7 @@ function StoryPlayer() {
   return (
     <main className="story-runtime">
       {work ? (
-        <Phone work={work} />
+        <Phone work={work} resetOnReload />
       ) : (
         <p role="status">{error || "正在打开手机…"}</p>
       )}
