@@ -9,14 +9,19 @@ function StoryPlayer() {
     [error, setError] = useState("");
   useEffect(() => {
     const abort = new AbortController();
-    fetch(
-      new URLSearchParams(location.search).get("preview") === "test"
+    const params = new URLSearchParams(location.search);
+    const dataPath =
+      params.get("preview") === "test"
         ? "./test-work.json"
-        : new URLSearchParams(location.search).get("template") === "blank"
+        : params.get("template") === "blank"
           ? "./blank-work.json"
-          : "./work.json",
-      { signal: abort.signal, cache: "no-store" },
-    )
+          : "./work.json";
+    const dataUrl = new URL(dataPath, location.href);
+    // Cache data per published version: repeat visits load faster, while a new
+    // ?v=... link still requests fresh story data after a deployment.
+    const version = params.get("v");
+    if (version) dataUrl.searchParams.set("v", version);
+    fetch(dataUrl.toString(), { signal: abort.signal })
       .then((r) => {
         if (!r.ok) throw Error("无法加载剧情数据（HTTP " + r.status + "）");
         return r.json();
